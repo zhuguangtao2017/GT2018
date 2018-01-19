@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>- 个人中心</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content="">
+    <include file="public@head"/>
+    <style>
+        .control-label {
+            font-weight: bold;
+            float: left;
+            width: 70px;
+        }
+    </style>
+</head>
+<body class="body-white" id="top">
+<include file="public@nav" />
+<div class="container tc-main">
+    <div class="row">
+        <div class="col-md-3">
+            <include file="public@usernav" />
+        </div>
+        <div class="col-md-9">
+            <div class="tabs">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#one" data-toggle="tab"><i class="fa fa-list-alt"></i>&nbsp;我的分享
+                    </a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="one">
+                        <br>
+                        <div class="table-responsive">
+						<table class="table table-hover table-bordered table-list">
+
+                       {$arr}
+					   </table>
+                        </div>
+                    </div>
+          
+                  <div class="box1 col-md-5 col-xs-12 form-horizontal container" ></div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+  <style type="text/css">
+    .box1 label{width: 90px}
+  </style>
+</div>  <include file="public@footer" />
+<!-- /container -->
+<include file="public@scripts" />
+<script type="text/javascript">
+
+</script>
+</html>

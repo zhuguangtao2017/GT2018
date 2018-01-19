@@ -1,0 +1,183 @@
+<include file="public@header"/>
+<script src="__STATIC__/js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function()
+    {
+        $(".hid").click(function () {
+            $(this).next(".sdspan").toggle();
+        })
+        $(".tj").click(function()
+        {
+        	var pid = $(this).prev("select").val();
+        	var id  = $(this).prev("select").attr('name');
+        	if(pid!='')
+        	{
+        		$.post('__URL__/ajax',{pid:pid,id:id},function()
+	        	{
+	        		history.go(0);
+	        	})
+        	}
+        	else
+        	{
+        		alert('请选择地区');
+        	}
+        })
+        $(".qx").click(function()
+        {
+            var pid = $(this).prev("select").val();
+            var id  = $(this).prev("select").attr('name');
+            if(pid!='')
+            {
+                $.post('__URL__/ajax',{qpid:pid,qid:id},function()
+                {
+                    history.go(0);
+                })
+            }
+            else
+            {
+                alert('请选择地区');
+            }
+        })
+    })
+</script>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li id="li-one"><a>省代理商管理</a></li>
+		<li id="li-two"><a href="{:url('AdminProvince/create')}">添加省代理商</a></li>
+		<script>
+			$('#li-one').addClass('active');
+		</script>
+	</ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('user/admin_province/index')}">
+        <!--<div style="display: flex;flex-direction: row;justify-content: space-between;padding-right:2%;">-->
+            <!--<div>-->
+                省代ID：
+                <input class="form-control" type="text" name="uid" style="width: 200px;" value="{:input('param.uid')}"
+                       placeholder="请输入省代ID">
+                省代理：
+                <input class="form-control" type="text" name="keyword" style="width: 200px;" value="{:input('param.keyword')}"
+                       placeholder="省代用户名/昵称/邮箱">
+				&nbsp;时间(起)：
+				<input class="form-control" type="date" id="stime" name="stime" style="width: 200px;" value="{:input('param.stime')}">
+				&nbsp;时间(至)：
+				<input class="form-control" type="date" id="etime" name="etime" style="width: 200px;" value="{:input('param.etime')}">
+                <input type="submit" class="btn btn-primary" value="搜索"/>
+                <a class="btn btn-danger" href="{:url('user/adminIndex/index')}">清空</a>
+           <!-- </div>-->
+            <!--<div>
+                <a class="btn btn-warning pull-right" href="{:url('user/adminProvince/create')}">添加省代理</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    </form>
+    <form method="post" class="js-ajax-form">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <td>等级</td>
+                <th>邮箱</th>
+                <th>手机</th>
+                <th>注册时间</th>
+                <th>上次登录时间</th>
+				<th>收益</th>
+				<th>余额</th>
+                <th>状态</th>
+				<th>省份</th>
+				<th>明细</th>
+				<th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <php>
+                $user_statuses=array("0"=>lang('USER_STATUS_BLOCKED'),"1"=>lang('USER_STATUS_ACTIVATED'),"2"=>lang('USER_STATUS_UNVERIFIED'));
+            </php>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo['user_nickname']?$vo['user_nickname']:($vo['user_email']?$vo['user_email']:$vo['mobile'])}</td>
+                    <td>
+                        <switch name="$vo.user_type">
+                            <case value="1">超级管理</case>
+                            <case value="2">省代</case>
+                            <case value="3">代理</case>
+                            <case value="4">会员</case>
+							<case value="5">注册会员</case>
+                        </switch>
+                    </td>
+                    <td>{$vo.user_email}</td>
+                    <td>{$vo.mobile}</td>
+                    <td>{:date('Y-m-d H:i:s',$vo['create_time'])}</td>
+                    <td>{:date('Y-m-d H:i:s',$vo['last_login_time'])}</td>
+                    <td>
+					自身收益￥{$vo['money']}
+					分红￥{$vo['money_fenHong']}
+					购物券￥{$vo['jf']}
+					<span style="display:block-inline;margin-left:1%;color:#f00">代理收益￥{$vo['s_money']}</span>
+					</td>
+					<td>余额￥
+					{$vo['y_money']+$vo['money_fenHong']}
+					<neq name="aqx" value="6">
+						<a href="{:url('AdminIndex/moneycharge',array('id'=>$vo['id']))}"> 充值
+						</neq>
+					</a></td>
+					<td>
+						<if condition="$vo['user_status']==1">
+							启用
+						<else />
+							拉黑
+						</if>
+					</td>
+					<td>{$vo['province']}</td>
+					<td>
+					<a class="btn btn-sm btn-success xiaofei" href="
+					__URL__/../admin_province/spend?id={$vo.id}&pid={$vo.pid}&uname={$vo.user_nickname}
+					">消费明细</a>&nbsp;&nbsp;&nbsp;
+					<!--:url('AdminProvince/profit',['id'=>$vo['id']])-->
+					<a class="btn btn-sm btn-info shouyi" href="
+					__URL__/../admin_province/profit?id={$vo['id']}&pid={$vo.pid}">收益明细</a>
+					</td>
+					<td>
+						<neq name="vo.user_status" value="1">
+							<a href="{:url('adminIndex/cancelban',array('id'=>$vo['id']))}"
+							   class="js-ajax-dialog-btn"
+							   data-msg="激活用户?">启用</a>
+							<else/><!---->
+							<a href="{:url('adminIndex/ban',array('id'=>$vo['id']))}"  class="js-ajax-dialog-btn"
+							   data-msg="拉黑此用户?" style="color:#999">拉黑</a>
+						</neq>
+						<a href="{:url('AdminProvince/exits',['id'=>$vo['id']])}" 
+						style="margin-left:10px;"
+						class="btn btn-sm btn-warning ">修改</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="pagination">{$page}</div>
+
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+	$('li.active>a').text('省代理商管理');
+	$('.xiaofei').click(function (){
+		var url = this.href
+		var time_type = $('#time_type').val();
+		this.href=url+'&stime='+$('#stime').val()+'&etime='+$('#etime').val();
+		//alert(this.href);
+
+		//return false;
+	});
+	$('.shouyi').click(function (){
+		var url = this.href
+		this.href=url+'&stime='+$('#stime').val()+'&etime='+$('#etime').val();
+		//alert(this.href);
+
+		//return false;
+	});
+</script>
+</body>
+</html>

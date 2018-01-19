@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title id="AgentSiteName">支付</title>
+	  <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <link type="text/css" rel="stylesheet" href="__STATIC__/Recharge.css?16030901" />
+    <script type="text/javascript" src="__STATIC__/jquery.js"></script>
+    <script type="text/javascript">
+        function rechargeCheck() {//
+            enableNext(false);
+            chargeStandard('-1');
+            if ($('#interChoise input:checked').length != 1) {
+                $("#chkMoney").text("请选择支付方式");
+                return false;
+            }
+            if (chkMoney()) {
+                ComfirmCharge();
+                enableNext(true);
+                $('#ChargeMoney').css('border-color', '#d4d4d4');
+                return true;
+            }
+            $('#ChargeMoney').css('border-color', 'red');
+            return false;
+        }
+        function enableNext(enable, text) {//
+            if (enable) {
+                $("#payBtn").val($.trim(text) == '' ? '下一步' : text).removeAttr("disabled").removeClass("BtnFalse");
+                return;
+            }
+            $("#payBtn").val($.trim(text) == '' ? '下一步' : text).attr("disabled", "disabled").addClass("BtnFalse");
+        }
+        function chkMoney() {//
+            var type = $("#interChoise label.selected").attr("id");
+            var money = $("#ChargeMoney").val();
+            var reg = /^[0-9]*[1-9][0-9]*$/;
+            if (!reg.test(money)) {
+                $("#chkMoney").text("格式不正确,需为整数");
+                return false;
+            } else {
+                if (type == "alipay") {
+                    if (1 <= money && money <= parseInt($("#AliPayMaxMoney").val())) {
+                        $("#chkMoney").text("");
+                        return true;
+                    } else {
+                        $("#chkMoney").text("金额超出范围，请重新填写");
+                        return false;
+                    }
+                } else if (type == "tenpay") {
+                    if (1 <= money && money <= parseInt($("#TenPayMaxMoney").val())) {
+                        $("#chkMoney").text("");
+                        return true;
+                    } else {
+                        $("#chkMoney").text("金额超出范围，请重新填写");
+                        return false;
+                    }
+                } else if (type == "wxpay") {
+                    if (1 <= money && money <= parseInt($("#WXPayMaxMoney").val())) {
+                        $("#chkMoney").text("");
+                        return true;
+                    } else {
+                        $("#chkMoney").text("金额超出范围，请重新填写");
+                        return false;
+                    }
+                } else if (type == "aqcpay") {
+                    if (1 <= money && money <= parseInt($("#AQCPayMaxMoney").val())) {
+                        $("#chkMoney").text("");
+                        return true;
+                    } else {
+                        $("#chkMoney").text("金额超出范围，请重新填写");
+                        return false;
+                    }
+                } else if (type == "gopay") {
+                    if (1 <= money && money <= parseInt($("#GoPayMaxMoney").val())) {
+                        $("#chkMoney").text("");
+                        return true;
+                    } else {
+                        $("#chkMoney").text("金额超出范围，请重新填写");
+                        return false;
+                    }
+                } else if (type == "sdopay" || type == "cmpay" || type == "ebtpay") {
+                    if (1 <= money) {
+                        $("#chkMoney").text("");
+                        return true;
+                    } else {
+                        $("#chkMoney").text("金额超出范围，请重新填写");
+                        return false;
+                    }
+                } else {
+                    $("#chkMoney").text("");
+                    return true;
+                }
+            }
+        }
+        function getMoneyTip() {//
+            var type = $("#interChoise label.selected").attr("id");
+            if (type == 'alipay') {
+                $('#ChargeMoney').attr('placeholder', $("#AlipayMoney").val());
+            } else if (type == 'tenpay') {
+                $('#ChargeMoney').attr('placeholder', $("#TenpayMoney").val());
+            } else if (type == 'sdopay') {
+                $('#ChargeMoney').attr('placeholder', $("#SdopayMoney").val());
+            } else if (type == 'gopay') {
+                $('#ChargeMoney').attr('placeholder', $("#GopayMoney").val());
+            } else if (type == 'cmpay') {
+                $('#ChargeMoney').attr('placeholder', $("#CmpayMoney").val());
+            } else if (type == 'ebtpay') {
+                $('#ChargeMoney').attr('placeholder', $("#YbtpayMoney").val());
+            } else if (type == 'rbpay') {
+                $('#ChargeMoney').attr('placeholder', $("#RBpayMoney").val());
+            } else if (type == 'wxpay') {
+                $('#ChargeMoney').attr('placeholder', $("#WXpayMoney").val());
+            } else if (type == 'aqcpay') {
+                $('#ChargeMoney').attr('placeholder', $("#AQCpayMoney").val());
+            }
+        }
+        function chargeStandard(wx, zs, xs, handleMoney, handMoneyStandard, type) {//
+            if (wx == '1') {//
+                $("#ActualMoney").html("<span  class='money' style='font-family:Tahoma'>" + zs + "</span>.<span  class='money' style='font-family:Tahoma; font-size:12px'>" + (xs.length <= 2 ? xs : xs.substring(0, 2)) + "</span>");
+                $("#chargeTab").hide()
+                $("#chargeTabWX").hide();
+                $("#chargeTabAQC").hide();
+                $("#seeStandard,#lbHandleMoney").show();
+                $("#HandleMoney").html(handleMoney);
+                $("#chargeTab tr:gt(0)").remove();
+                $("#chargeTabWX tr:gt(0)").remove();
+                $("#chargeTabAQC tr:gt(0)").remove();
+                if (type == "wxpay") {
+                    $("#chargeTabWX").show();
+                    $("#chargeTabWX").append(handMoneyStandard);
+                } else if (type == 'aqcpay') {
+                    $("#chargeTabAQC").show();
+                    $("#chargeTabAQC").append(handMoneyStandard);
+                } else {
+                    $("#chargeTab").show();
+                    $("#chargeTab").append(handMoneyStandard);
+                }
+            } else if (wx == '0') {//
+                $("#ActualMoney").html("<span  class='money' style='font-family:Tahoma'>" + zs + "</span>.<span  class='money' style='font-family:Tahoma; font-size:12px'>" + (xs.length <= 2 ? xs : xs.substring(0, 2)) + "</span>");
+                $("#chargeTab").hide()
+                $("#chargeTabWX").hide();
+                $("#seeStandard,#lbHandleMoney").hide();
+            } else {
+                $('#ActualMoney').html('***.**');
+                $('#seeStandard,#lbHandleMoney').hide();
+            }
+        }
+        function ComfirmCharge() {//
+            var type = $("#interChoise label.selected").attr("id");
+            if (chkMoney()) {
+                var datas = "processType=ConfirmCharge&PayType=" + type + "&ChargeMoney=" + $("#ChargeMoney").val();
+                $.ajax({
+                    type: "post",
+                    url: "../webnew/Customer/CustomerProcess/RechargeProcess.aspx",
+                    data: datas,
+                    cache: false,
+                    async: true,
+                    dataType: "json",
+                    success: function (res) {
+                        if (res.Status.Code == "success") {
+                            var actMoney = res.Data[0].ActualMoney;
+                            var am = actMoney.split('.');
+                            $('#m_money').text(actMoney.substring(0, actMoney.length - 1));
+                            chargeStandard(res.Data[0].IsPlaceHolder4 == '1', am[0], am[1], res.Data[0].HandleMoney, res.Data[0].HandMoneyStandard, type);
+                        } else {
+                           // alert(res.Status.Msg);
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        //alert(XMLHttpRequest.status);
+                    }
+                });
+            }
+        }
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核 
+                    presto: u.indexOf('Presto') > -1, //opera内核 
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核 
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核 
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端 
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器 
+                    iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1 //是否为iPhone或者QQHD浏览器 
+                };
+            } ()
+        }
+        function subMit() {//
+            var type = $("#interChoise label.selected").attr("id"); //获取支付类型
+            var money = $("#ChargeMoney").val();                    //获取支付金额
+            if (!rechargeCheck()) {
+                return false;
+            }
+            $("#payBtn").val("正在提交...").addClass("BtnFalse").attr("disabled", "disabled");
+            $("#HFtype").val(type);
+            $("#HFmoney").val(money);
+            $('#HFActualMoney').val($('#ActualMoney').text());
+            $("#HFbanktype").val(type == "tenpay" ? "0" : "");
+            $("#__VIEWSTATE").attr("disabled", true);
+            if (type == 'wxpay') {
+                if (browser.versions.mobile && (browser.versions.android || browser.versions.iPhone)) {
+                    var ua = window.navigator.userAgent.toLowerCase();
+                    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                        $("#HFtype").val("wxpaypn");
+                        $("#mask").show();
+                        $("#chargeInfo").attr({ "action": "../AccountSavingZhongZhuan.aspx"});
+                        $("#chargeInfo").submit();
+                    } else {
+                        $("#mask").show();
+                        $("#chargeInfo").attr({ "action": "../AccountSavingZhongZhuan.aspx", "target": "_blank" });
+                        $("#chargeInfo").submit();
+                    }
+                } else {
+                    $('#m_title').text('微信扫一扫支付');
+                    $('#m_head').text('请使用微信扫一扫支付');
+                    $("#qrFrame").show().find('.qr-code').next().empty();
+                    refreshPay(type, '');
+                }
+            } else if (type == 'aqcpay') {
+                $('#m_title').text('支付宝扫一扫支付');
+                $('#m_head').text('请使用手机支付宝扫一扫支付');
+                $("#qrFrame").show().find('.qr-code').next().empty();
+                refreshPay(type, '');
+            } else {
+                $("#mask").show();
+                $("#chargeInfo").attr({ "action": "../AccountSavingZhongZhuan.aspx", "target": "_blank" });
+                $("#chargeInfo").submit();
+            }
+        }
+        function refreshPay(payType, tradeNo) { //
+            $("#iframeQR").attr({ 'src': '../wxpay/NativePayPage.aspx?money=' + $("#ChargeMoney").val() + '&paytype=' + payType + '&tradeNo=' + tradeNo }).prev().show();
+        }
+        $(function () {
+            $('#iframeQR').removeAttr('src'); //
+            $("#interChoise label").hover(function () {
+                $(this).addClass("active");
+            }, function () {
+                $(this).removeClass("active");
+            }).click(function () {
+                $(this).addClass('selected').siblings().removeClass('selected');
+                getMoneyTip();
+                rechargeCheck();
+            });
+            $("#ChargeMoney").keyup(rechargeCheck);
+            $("#seeStandard").hover(function () {
+                $("#chargePanel").show();
+            }, function () {
+                $("#chargePanel").hide();
+            });
+            $("#payBtn").click(subMit);
+            $(".frameClose,#frameClose,#frameRepay").click(function () {
+                $(this).parents('.frameModal').hide();
+                enableNext(true);
+                $("#iframeQR").removeAttr('src');
+            });
+            $("#maskClose").click(function () {
+                $("#mask").hide();
+                enableNext(true);
+                $("#iframeQR").removeAttr('src');
+            });
+            $('#payInAlipay').click(function () {
+                $('.frameModal').hide();
+                $("#HFtype").val('alipay');
+                $("#mask").show();
+                $("#chargeInfo").attr({ "action": "../AccountSavingZhongZhuan.aspx", "target": "_blank" });
+                $("#chargeInfo").submit();
+            });
+            $('#payOK').click(function () { //
+                window.location.href = 'PayResult.aspx?money=' + $("#HFmoney").val() + '&type=' + $("#HFtype").val();
+            });
+            $.ajax({//
+                type: "post",
+                url: "../webnew/Customer/CustomerProcess/RechargeProcess.aspx?processType=ChargeInterface1",
+                cache: false,
+                async: true,
+                dataType: "json",
+                success: function (res) {
+                    if (res.Status.Code == "success") {
+                        $("#topUserName").html(res.Data[0].CompanyName);
+                        if (res.Data[0].PayEnabled == "1") {
+                            if (res.Data[0].FlagAQCPay == "1") { $("#aqcpay").show(); }
+                            if (res.Data[0].FlagAliPay == "1") { $("#alipay").show(); }
+                            if (res.Data[0].FlagTenPay == "1") { $("#tenpay").show(); }
+                            if (res.Data[0].FlagSdoPay == "1") { $("#sdopay").show(); }
+                            if (res.Data[0].FlagGoPay == "1") { $("#gopay").show(); }
+                            if (res.Data[0].FlagCmPay == "1") { $("#cmpay").show(); }
+                            if (res.Data[0].FlagYbtPay == "1") { $("#ebtpay").show(); }
+                            if (res.Data[0].FlagRBPay == "1") { $("#rbpay").show(); }
+                            if (res.Data[0].FlagYIPay == "1") { $("#yipay").show(); }
+                            if (res.Data[0].FlagWxPay == "1") { $("#wxpay").show(); }
+                            $("#WXpayMoney").val(res.Data[0].WXpayMoney);
+                            $("#AlipayMoney").val(res.Data[0].AlipayMoney);
+                            $("#AQCpayMoney").val(res.Data[0].AQCpayMoney);
+                            $("#TenpayMoney").val(res.Data[0].TenpayMoney);
+                            $("#SdopayMoney").val(res.Data[0].SdopayMoney);
+                            $("#GopayMoney").val(res.Data[0].GopayMoney);
+                            $("#CmpayMoney").val(res.Data[0].CmpayMoney);
+                            $("#YbtpayMoney").val(res.Data[0].YbtpayMoney);
+                            $("#RBpayMoney").val(res.Data[0].RBpayMoney);
+                            $("#YIpayMoney").val(res.Data[0].YIpayMoney);
+                            $("#AliPayMaxMoney").val(res.Data[0].AliPayMaxMoney);
+                            $("#TenPayMaxMoney").val(res.Data[0].TenPayMaxMoney);
+                            $("#WXPayMaxMoney").val(res.Data[0].WXPayMaxMoney);
+                            $("#AQCPayMaxMoney").val(res.Data[0].AQCPayMaxMoney);
+                            $("#GoPayMaxMoney").val(res.Data[0].GoPayMaxMoney);
+                        }
+                        $("#loading").hide();
+                        $("#recargeTab").show();
+                    } else {
+                       // alert(res.Status.Msg);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    //alert(XMLHttpRequest.status);
+                }
+            });
+        });
+    </script>
+	
+	 <include file="public@head"/>
+	  <hook name="before_head_end"/>
+</head>
+<body class="body-white" >
+<include file="public@nav"/>
+<div class="container">
+    <form name="chargeInfo" method="post" action="" id="chargeInfo">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value=" " />
+</div>
+
+<div>
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="678FA88F" />
+</div>
+    <input type="hidden" name="HFtype" value="" id="HFtype" />
+    <input type="hidden" name="HFbanktype" value="" id="HFbanktype" />
+    <input type="hidden" name="HFmoney" value="" id="HFmoney" />
+    <input type="hidden" name="HFActualMoney" value="" id="HFActualMoney" />
+    <input type="hidden" id="AlipayMoney" />
+    <input type="hidden" id="TenpayMoney" />
+    <input type="hidden" id="SdopayMoney" />
+    <input type="hidden" id="GopayMoney" />
+    <input type="hidden" id="CmpayMoney" />
+    <input type="hidden" id="YbtpayMoney" />
+    <input type="hidden" id="RBpayMoney" />
+    <input type="hidden" id="YIpayMoney" />
+    <input type="hidden" id="WXpayMoney" />
+    <input type="hidden" id="AQCpayMoney" />
+    <input type="hidden" id="AliPayMaxMoney" />
+    <input type="hidden" id="TenPayMaxMoney" />
+    <input type="hidden" id="WXPayMaxMoney" />
+    <input type="hidden" id="AQCPayMaxMoney" />
+    <input type="hidden" id="GoPayMaxMoney" />
+    <input type="hidden" name="TradeNo" id="TradeNo" />
+ 
+   <div class="row">
+        <div class="col-md-12">
+            
+			 <h2 class="container_h2">加入购物</h2>
+            
+              <div class="tc-box article-box">
+                    <table  style="font-size: 13px; line-height:35px" cellpadding="0" cellspacing="0" >
+                       
+						<tr>
+							<td width=90>商品信息：</td>
+							<td>{$rs.post_title}  </td>
+							 
+						</tr>
+
+						<tr>
+							<td>商品价格：</td>
+							<td>{$rs.post_source}元  </td>
+							 
+						</tr>
+
+						<tr>
+							<td></td>
+							<td><a style="color:#5D8EB2" href="{:url('user/profile/add',['type'=>'1','iid'=>$iid,'pan'=>'2'])}">添加收货地址</a>  </td>
+							 
+						</tr>
+
+						
+                        <tr>
+						
+                            <td class="field" >收货地址：</td>
+							
+                            <td class="fieldVal" valign="middle">
+							<volist name="adderss" id="vo">
+                                <input type="radio" name ="ls" value="{$vo.id}" class="dizhi"/>{$vo.name}--{$vo.address}<a href="{:url('user/profile/add',['id'=>$vo.id,'type'=>'2','pan'=>'2','iid'=>$iid])}">修改</a>&nbsp;<a href="{:url('user/profile/del',['id'=>$vo.id,'pan'=>'2','iid'=>$iid])}"  onclick="return confirm('您确定要删除吗？');">删除</a>
+                                <span id="chkMoney" style="color: Red; font-size: 12px; padding-left: 8px;"></span><br>
+                            
+                            </volist>
+							</td>
+                        </tr>
+                        <tr>
+                            <td class="field">实际支付：</td>
+                            <td class="fieldVal" valign="middle">
+                                <label class="MoneyTxt" id="ActualMoney">{$money}元</label>
+								<input type="hidden" value="{$rs.post_source}" id="shiji">
+                            </td>
+                        </tr>
+                        <!-- <tr id="zhizhi">
+                            <td  >支付方式：</td>
+                            <td  style="border:0px solid #eee;width:120px ">
+                                <label style="line-height: 50px;" id="alipay" for="inputAli">
+                                    <span class="aliPay">支付宝
+									<input name="interface" type="radio" id="inputAli" checked="checked"  value="1"/></span>
+                                </label>
+                            </td>
+                            <td style="border:0px solid #eee;width:120px " >
+                                <label id="wxpay"  style="line-height: 50px" for="inputWx" >
+                                    <span class="wxPay">微信支付<input name="interface" type="radio" id="inputWx" value="2" /></span>
+                                </label>
+                            </td>
+							 <td style="border:0px solid #eee;width:120px " >
+                                <label id="wxpay"  style="line-height: 50px" for="inputWx" >
+                                    <span class="wxPay">余额支付<input name="interface" type="radio" id="inputYe" value="3" /></span>
+                                </label>
+                            </td>
+							<td class="fieldVal" >
+                                <label id="wxpay"  style="line-height: 50px" for="inputWx" >
+                                    <span class="wxPay">银行卡支付<input name="interface" type="radio" id="inputYhk" value="4" /></span>
+                                </label>
+                            </td>
+                        </tr> -->
+  </table><input name="interface" type="hidden" id="inputYhk" value="4" />
+						  
+				<table  style="font-size: 13px; line-height:35px" cellpadding="0" cellspacing="0" >
+						
+						<!-- <tr id="zhanghao">
+						<td  >账号：</td>	
+						<td  > </td>		
+						<td class="fieldVal" valign="middle" style="border:0px solid #eee;"><input id="hao" type="text" value="{$zhifubao}" name="hao" style="margin-top:15px"></td>
+						</tr> -->
+                        <tr>
+                            <td class="field">&nbsp;</td>
+                            <td class="fieldVal" height="70" valign="bottom"><button type="" value="下一步" class="payBtn " id="payBtn"  />购买</button></td>
+                        </tr>
+                    </table>
+                    <div class="faqQuestion">
+                        <div class="faqTitle">常见支付问题：</div>
+                        <div class="questionContent">
+                            <div class="question">问：在线加款多久能到账？</div>
+                            <div class="answer">答：一般在线支付都是能在支付成功后即时到账的，但也有可能会因网络原因导致延时，大概等待10几分钟左右也能正常到账。</div>
+                            <div class="question">问：如果超过10分钟还未到账怎么办？</div>
+                            <div class="answer">答：与网站客服联系，核对汇款记录后帮你补款。</div>
+                            <div class="question">问：在线加款的手续费是怎么回事？</div>
+                            <div class="answer">答：手续费由第三方交易平台收取（如：支付宝、财付通等），我们并不收取任何费用。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </form>
+    <div class="frameModal" id="mask">
+        <div class="frameback"></div>
+        <div class="maskCenter">
+            <div class="maskTitle" style="text-align:left;">登录平台支付<a href="javascript:;" class="frameClose"></a></div>
+            <div class="resultTxt">请您在新打开的支付平台页面进行支付</div>
+            <div class="maskBtn">
+                <input type="button" value="支付完成" class="resultBtn" id="payOK" />
+                &nbsp;&nbsp;&nbsp;
+                <input type="button" value="关闭" class="resultBtn" onclick="location.href=location.href" />
+            </div>
+        </div>
+    </div>
+    <div id="qrFrame" class="frameModal">
+        <div class="frameback"></div>
+        <div id="wx-maskCenter" class="framebody">
+            <div class="framehead"><span id="m_title"></span><a href="javascript:;" class="frameClose"></a></div>
+            <div style="color:#5b5b5b;">
+                <p style="margin-bottom:0;font-size:24px;" id="m_head"></p>
+                <p style="font-size:14px;">总计支付金额<span style="color:#ff5a00" id="m_money"></span>元</p>
+            </div>
+            <div class="qr-code qr-code-weixin">
+                <div class="qr-code-back"></div>
+                <iframe id="iframeQR" frameborder="0" align="middle"></iframe>
+            </div>
+            <div id="wxTimeTips" style="margin-top:36px;font-size:14px;color:#919191"></div>
+        </div>
+    </div>
+    <div id="payResult" class="frameModal">
+        <div class="frameback"></div>
+        <div class="framebody" style="height:490px">
+            <div class="framehead"><span>支付结果</span><a href="javascript:;" class="frameClose"></a></div>
+            <div class="frame-content">
+                <p class="frame-result"><span>支付成功，正在跳转...</span></p>
+                <p class="frame-direct"><a href="javascript:">&gt;&gt;手动跳转到结果页</a></p>
+            </div>
+            <div class="frame-content">
+                <p class="frame-result"><span class="fail">支付失败，原因</span></p>
+                <p class="frame-control"><input id="frameRepay" type="button" value="重新充值" /><input id="frameClose" type="button" style="margin-left:16px" value="关闭" /></p>
+            </div>
+        </div>
+
+    </div>
+
+	<script>
+	$("#payBtn").click(function(){
+
+	if($(".dizhi").is(":checked"))
+		{
+			
+			
+			$("#payBtn").attr('type','submit'); 
+		
+			if(parseInt($("#hao").val())<parseInt($("#shiji").val()))
+			{
+				alert("余额不足！");
+				//alert($("#hao").val());
+				//alert($("#shiji").val());
+				$("#payBtn").attr('type','button');
+			}
+			if($("#inputYhk").is(':checked')){
+			
+			if(!$('.yh').is(":checked"))
+			{
+				alert("请选择银行！");
+				$("#payBtn").attr('type','button');
+			}
+			}
+			if($('#inputAli').is(":checked"))
+			{
+				//alert(123);
+				if($("#hao").val()==''){
+				alert("支付宝账号不能为空！");
+				$("#payBtn").attr('type','button');
+				}
+			}
+			if($('#inputWx').is(":checked"))
+			{
+				if($("#hao").val()==''){
+				alert("微信账号不能为空！");
+				$("#payBtn").attr('type','button');
+				}
+			}
+			
+		}
+	else{
+		alert("请选择收货地址");
+		$("#payBtn").attr('type','button');
+		}
+	});
+	 $(function () {
+            $("#zhizhi input").click(function () {
+			
+                if ($(this).attr("checked")) {
+					//alert($(this).val());
+                     $.get("{:url('portal/article/aj')}",{lei:$(this).val()},function(data){
+                    $("#zhanghao").html(data);
+                 });
+                }
+            });
+        });
+	
+	</script>
+</div><include file="public@footer"/>
+
+	<include file="public@scripts"/>
+<hook name="before_body_end"/>
+</body>
+</html>

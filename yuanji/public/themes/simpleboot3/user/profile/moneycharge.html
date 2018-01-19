@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>- 充值中心</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content="">
+    <include file="public@head"/>
+</head>
+
+<body class="body-white" id="top">
+<include file="public@nav" />
+
+<div class="container tc-main">
+    <div class="row">
+        <div class="col-md-3">
+            <include file="public@usernav" />
+        </div>
+        <div class="col-md-9">
+            <div class="tabs">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#one" data-toggle="tab"><i class="fa fa-star"></i> 充值中心</a></li>
+                </ul>
+                <div style="padding: 10px 10px 10px;">
+    <form class="bs-example bs-example-form" role="form" action="" method="post">
+        <div class="row">
+
+		<!-- <table style="font-size: 13px; line-height:35px" cellpadding="0" cellspacing="0">
+			 <tr id="zhizhi">
+                            <td  >充值方式：</td>
+                            <td  style="border:0px solid #eee;width:120px ">
+                                <label style="line-height: 50px;" id="alipay" for="inputAli">
+                                    <span class="aliPay">支付宝
+									<input name="interface" type="radio" id="inputAli" checked="checked"  class="pay" value="1"/></span>
+                                </label>
+                            </td>
+                            <td style="border:0px solid #eee;width:120px " >
+                                <label id="wxpay"  style="line-height: 50px" for="inputWx" >
+                                    <span class="wxPay">微信<input name="interface" type="radio" class="pay" id="inputWx" value="2" /></span>
+                                </label>
+                            </td>
+						
+							<td class="fieldVal" >
+                                <label id="wxpay"  style="line-height: 50px" for="inputWx" >
+                                    <span class="wxPay">银行卡
+									<input name="interface" type="radio" id="inputYhk" class="pay" value="4" /></span>
+                                </label>
+                            </td>
+                        </tr>
+							
+						</table>
+						<br><br> -->
+            <div class="col-lg-8">	<br><br>
+                <div class="input-group">
+			
+                    <input type="text" class="form-control" name="money" value="" id="chong" placeholder="输入充值金额">
+                    <span class="input-group-btn">
+                        <button class="btn btn-warning" type="submit" id="chongzhi" >充值!</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+    </form>
+</div>
+            </div>
+        </div>
+    </div>
+   
+</div> <include file="public@footer" />
+<!-- /container -->
+<include file="public@scripts" />
+<script>
+    $('#chongzhi').click(function () {
+		var chong=$("#chong").val();
+		 var   type="^[0-9]*[1-9][0-9]*$";  
+        var   re   =   new   RegExp(type); 
+
+	 
+			//alert(123);
+			 if(chong.match(re)==null)  
+			{  
+				alert( "请输入大于零的整数!");  
+				$("#chongzhi").attr("type","button");
+			}  
+			else
+			{
+				//alert(0);
+				$("#chongzhi").attr("type","submit");
+			}
+
+		 
+			
+		
+    })
+</script>
+</body>
+</html>

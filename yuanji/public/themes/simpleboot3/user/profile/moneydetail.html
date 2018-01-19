@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{$user_login}  - 资金明细</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content="">
+    <include file="public@head"/>
+</head>
+
+<body class="body-white" id="top">
+<include file="public@nav" />
+
+<div class="container tc-main">
+    <div class="row">
+        <div class="col-md-3">
+            <include file="public@usernav" />
+        </div>
+        <div class="col-md-9">
+            <div class="tabs">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#one" data-toggle="tab"><i class="fa fa-star"></i> 资金明细</a></li>
+                </ul>
+				<form class="form-inline well margin-top-20" action="">
+				<div class="col-lg-5">
+				<span>时间起：</span>
+				<input type="date" class="form-control" value='<notempty name="$arr.timeqi">{$arr.timeqi}</notempty>' name="timeqi">
+				</div>
+				
+				<div class="col-lg-5">
+				时间止：
+				<input type="date" class="form-control"  value='<notempty name="$arr.timezhi">{$arr.timezhi}</notempty>' name="timezhi">
+				</div>
+				<input type="hidden" name="hidd" value="1">
+				<button type="submit" class="form-control">查找</button>
+				</form>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="one">
+                        <br>
+						<!--2提现1消费3充值-->
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>金额</th>
+                                <th>消费会员</th>
+								<th>类型</th>
+                                <th>时间</th>
+                               
+                            </tr>
+                            </thead>
+                            <tbody>
+							<volist name="money" id="vo">
+                                <tr>
+                                    <td>{$i}</td>
+                                    <td>{$vo['money']}</td>
+                                    <td><php>
+									if($vo['user_nickname']!=''){echo $vo['user_nickname'];}else {echo cmf_get_current_user()['user_nickname'];};
+									</php>
+									</td>
+									
+                                    <td>
+										<switch name="$vo['type']">
+										    <case value="1" >我的分享</case>
+											<case value="2" >
+											<switch name="$vo['allow']">
+												<case value="0" >审核中</case>
+												<case value="1" >成功提现</case>
+												<case value="2" >未通过提现</case>
+											</switch>
+											</case>
+											
+										    <case value="3" >充值</case>
+                                            <case value="4" >消费</case>
+											 <case value="5" >每日分红</case>
+											 <case value="6" >购物券</case>
+											 <case value="7" >提现手续费</case>
+										</switch>
+
+									</td>
+									<td>{$vo['time']|date='Y-m-d H:i:s',###}</td>
+                                 
+                                </tr>
+							</volist>
+                            </tbody>
+                        </table>
+                        <div class="pagination">{$page|default=''}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div> <include file="public@footer" />
+<!-- /container -->
+<include file="public@scripts" />
+</body>
+</html>

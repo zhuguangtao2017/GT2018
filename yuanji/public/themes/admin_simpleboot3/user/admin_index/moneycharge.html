@@ -1,0 +1,64 @@
+<include file="public@header"/>
+<script src="__STATIC__/js/jquery-1.10.2.min.js"></script>
+ 
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li id="li-one"><a href="{:url('AdminIndex/index')}">用户管理</a></li>
+		<li id="li-two"><a href="{:url('AdminIndex/moneycharge')}">充值</a></li>
+		<script>
+			$('#li-two').addClass('active');
+		</script>
+	</ul>
+	 <form action="{:url('AdminIndex/moneycharge')}"  method="post" class="form-horizontal js-ajax-form"
+	 style="padding-top:2%;" role="form">
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>手机号或邮箱<span class="form-required">*</span></th>
+                        <td>
+                            <input type="text" name="user" placeholder="手机号或邮箱"  value='{$rs.mobile}' readonly class="form-control"
+                                   id="js-mobile-input">
+                        </td>
+                    </tr>
+
+					 <tr>
+                        <th>用户名<span class="form-required">*</span></th>
+                        <td>
+                            <input type="text" name="user" placeholder="手机号或邮箱"  value='{$rs.user_nickname}' readonly class="form-control"
+                                   id="js-mobile-input">
+                        </td>
+                    </tr>
+
+					    <tr>
+                        <th>金额（元）<span class="form-required">*</span></th>
+                        <td>
+                            <input type="text" name="money" placeholder="充值金额" class="form-control"
+                                   id="js-mobile-input">
+                        </td>
+                    </tr>
+					 <input type="hidden" name="id" value='{$rs.id}' >
+                    
+                    
+                 
+                </table>
+                <div class="form-group">
+                    <!--<div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">添加</button>
+                        <a class="btn btn-default" href="{:url('AdminArticle/index')}">返回</a>
+                    </div>-->
+					<button class="btn btn-primary btn-block js-ajax-submit" type="submit" data-wait="1500"
+                                    style="margin-left: 0px;">添加
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+ 
+
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

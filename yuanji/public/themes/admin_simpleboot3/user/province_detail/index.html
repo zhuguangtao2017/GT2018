@@ -1,0 +1,38 @@
+<include file="public@header"/>
+<script src="__STATIC__/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li id="li-one"><a href="">各省查看</a></li>
+		<!-- <li id="li-two"><a href="">添加省代理商</a></li> -->
+		<script>
+			$('#li-one').addClass('active');
+		</script>
+	</ul>
+	
+        <div class="row">
+            <div class="col-md-12">
+				<volist name="pro" id="vo">
+					<div class="col-md-4">
+						<h4><a href="{:url('show',['pid'=>$vo.id])}">{$vo.province}</a></h4>
+                    </div>
+				</volist>
+                <!-- <div class="form-group"> -->
+                    <!--<div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary js-ajax-submit">添加</button>
+                        <a class="btn btn-default" href="{:url('AdminArticle/index')}">返回</a>
+                    </div>-->
+                
+					<!-- <button class="btn btn-primary btn-block js-ajax-submit" type="submit" data-wait="1500"
+					                                    style="margin-left: 0px;">添加
+					                    </button>
+					                </div> -->
+            </div>
+        </div>
+
+
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{$user_login}  - 提现中心</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content="">
+    <include file="public@head"/>
+</head>
+
+<body class="body-white" id="top">
+<include file="public@nav" />
+
+<div class="container tc-main">
+    <div class="row">
+        <div class="col-md-3">
+            <include file="public@usernav" />
+        </div>
+        <div class="col-md-9">
+            <div class="tabs">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#one" data-toggle="tab"><i class="fa fa-star"></i> 提现中心</a></li>
+                </ul>
+              
+                   <div style="padding: 10px 10px 5px;">
+    <form class="bs-example bs-example-form" role="form" action="{:url('profile/moneytx')}" method="post">
+        <!-- <div class="row">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">可提金额：</button>
+                    </span>
+                    <input type="text" class="form-control" id="keti" value="{$shouyi}" disabled>
+                </div>/input-group
+            </div>/.col-lg-6
+            <br><br><br><br> -->
+			<input type="hidden"  id="keti" value="{$shouyi}" >
+			<table style="font-size: 13px; line-height:35px" cellpadding="0" cellspacing="0">
+			 <tr id="zhizhi">
+                            <!-- <td  >提现到：</td>
+                            <td  style="border:0px solid #eee;width:120px ">
+                                <label style="line-height: 50px;" id="alipay" for="inputAli">
+                                    <span class="aliPay">支付宝
+									<input name="interface" type="radio" id="inputAli" checked="checked"  value="1"/></span>
+                                </label>
+                            </td>
+                            <td style="border:0px solid #eee;width:120px " >
+                                <label id="wxpay"  style="line-height: 50px" for="inputWx" >
+                                    <span class="wxPay">微信
+									<input name="interface" type="radio" id="inputWx" value="2" /></span>
+                                </label>
+                            </td> -->
+							<td class="fieldVal" >
+                                <label id="wxpay"  style="line-height: 50px" for="inputWx" >
+                                    <span class="wxPay">银行卡
+									<input name="interface" type="radio" id="inputYhk" value="4" /></span>
+                                </label>
+                            </td>
+                        </tr>
+					
+						</table>
+						<table>
+							<tr id="zhanghao">
+						<!-- <td  >账号：</td>	 -->
+								
+						<!-- <td class="fieldVal" valign="middle" style="border:0px solid #eee;"><input id="hao" type="text" value="{$zhifubao}" name="hao" style="margin-top:15px" id="hao"></td> -->
+						</tr>
+						</table>
+						<br><br>
+            <div class="col-lg-8">
+                <div class="input-group">								
+                    <input type="text" class="form-control" name="money" placeholder="输入提现金额  至少200 余额{$shouyi}元" value="" id="my">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" id="tixian" type="submit" >发起提现!</button>
+                    </span>					
+                </div>
+				
+				 <div class="input-group">								
+                     <p><br>注意： 申请提现需要等待管理员审核,请耐心等待，最少金额为200，只能提现200的倍数</p>				
+                </div>
+				<!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+    </form>
+</div>
+                </div>
+            </div>
+        
+
+</div>   
+    <include file="public@footer" />
+<!-- /container -->
+<include file="public@scripts" />
+<script>
+$(function () {
+            $("#zhizhi input").click(function () {
+			
+                if ($(this).attr("checked")) {
+					//alert($(this).val());
+                     $.get("{:url('portal/article/aj')}",{lei:$(this).val()},function(data){
+                    $("#zhanghao").html(data);
+                 });
+                }
+            });
+        });
+    $('#tixian').click(function () {
+       var keti=$("#keti").val();
+	   var tixian=$("#my").val();
+	  // alert(keti);
+	  // alert(tixian);
+	    var   type="^[0-9]*[1-9][0-9]*$";  
+        var   re   =   new   RegExp(type);  
+      var zh=$("#hao").val();
+	 // var yhkk=$("#inputYhk:checked").length();
+	//alert(yhkk);  
+	  //alert(zh);
+	  
+			if(zh=='')
+			{
+				alert("提现账号不能为空！");
+				$("#tixian").attr("type","button");
+			}
+			else
+		if(parseInt(tixian)>parseInt(keti))
+		{
+			alert("提现金额不能大于可提金额！");
+			$("#tixian").attr("type","button");
+		}
+		else if(!$("#inputYhk").is(":checked")){
+		alert("请选择银行！");
+			$("#tixian").attr("type","button");
+		}
+		
+		else
+		{
+			if(tixian==''){
+				alert("提现金额不能为空！");
+				$("#tixian").attr("type","button");
+			}else if(tixian<200)
+			{
+				alert("提现金额至少为200！");
+				$("#tixian").attr("type","button");
+			
+			}
+			else if(tixian%200!=0)
+		{
+			alert("请输入200的倍数！如200,400...");
+			$("#tixian").attr("type","button");
+	
+		}
+			else if(tixian.match(re)==null)  
+			{  
+				alert( "请输入大于零的整数!");  
+				$("#tixian").attr("type","button");
+			}else if($("#inputYhk").is(':checked')){
+			
+			if(!$('.yh').is(":checked"))
+			{
+				alert("请选择银行！");
+				$("#tixian").attr("type","button");
+			}else
+				{
+$("#tixian").attr("type","submit");
+				}
+			
+			}
+			else
+			{
+				$("#tixian").attr("type","submit");
+			}
+		}
+    })
+</script>
+</body>
+</html>

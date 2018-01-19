@@ -1,0 +1,44 @@
+﻿<include file="public@header" />  
+<style>
+	tr td input {width:40px; }
+</style> 
+<body>
+	<div class="wrap js-check-wrap">
+	<ul class="nav nav-tabs"><li class="active"><a href="{:url('baifen/index')}">分成比例</a></li></ul>
+	<form  method="post" action="{:url('Baifen/add')}">
+		<table class="table table-hover table-bordered" width="80%">
+			<thead>
+				<tr>
+					<th width="50">ID</th>
+					<th>一级</th>
+					<th>二级</th>
+					<th>三级</th>
+					<th>四级</th>
+					<th>五级</th>
+					<th>六级</th>
+					<th>七级</th>
+					<th>八级</th>
+					<th>九级</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{$data.id}</td>
+					<td><input type="text" name="one" value="{$data.one}">%</td>
+					<td><input type="text" name="two" value="{$data.two}">%</td>
+					<td><input type="text" name="three" value="{$data.three}">%</td>
+					<td><input type="text" name="four" value="{$data.four}">%</1td>
+					<td><input type="text" name="five" value="{$data.five}">%</td>
+					<td><input type="text" name="six" value="{$data.six}">%</td>
+					<td><input type="text" name="seven" value="{$data.seven}">%</td>
+					<td><input type="text" name="eight" value="{$data.eight}">%</td>
+					<td><input type="text" name="nine" value="{$data.nine}">%</td>
+				</tr>
+			</tbody>
+		</table>
+		 <input type="submit" name="sub" class="btn btn-primary" value="提交" />
+        	</form>	
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
