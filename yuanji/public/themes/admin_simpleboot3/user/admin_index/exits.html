@@ -1,0 +1,111 @@
+<include file="public@header"/>
+ <body>
+   <div class="">
+	<form action="{:url('AdminIndex/exits')}" method="post" role="form" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-bordered">
+                    <tr>
+                        <th width="100">用户名<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" type="text" style="width:400px;" required value="{$data.user_nickname}" name="user_nickname" />
+                        </td>
+                    </tr>
+                    <if condition="$data.mobile && $data.user_email">
+						<tr>
+							<th>手机<span class="form-required">*</span></th>
+							<td>
+								<input class="form-control" type="text" name="mobile" value="{$data.mobile}" readonly/>
+							</td>
+						</tr>
+						<tr>
+							<th>邮箱<span class="form-required">*</span></th>
+							<td>
+								<input class="form-control" type="text" name="user_email" value="{$data.user_email}" readonly>
+								<!-- <p class="help-block">多关键词之间用英文逗号隔开</p> -->
+							</td>
+						</tr>
+					<elseif condition="$data.mobile">
+						<tr>
+							<th>手机<span class="form-required">*</span></th>
+							<td>
+								<input class="form-control" type="text" name="mobile" readonly value="{$data.mobile}"/>
+							</td>
+						</tr>
+					<elseif condition="$data.user_email">
+						<tr>
+							<th>邮箱<span class="form-required">*</span></th>
+							<td>
+								<input class="form-control" type="text" name="user_email" value="{$data.user_email}" readonly>
+								<p class="help-block">多关键词之间用英文逗号隔开</p>
+							</td>
+						</tr>
+					</if>
+                    <tr>
+                        <th>性别<span class="form-required">*</span></th>
+                        <td>
+							<php>$sexs = array(0=>'未知',1=>'男',2=>'女');</php>
+							<foreach name="sexs" key="k" item="vo">
+								<input type="radio" required name="sex" value="{$k}"
+								<eq name="$k" value="$data.sex">
+									checked='checked'	
+								</eq>
+								>{$vo}
+							</foreach>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>原密码<span class="form-required">*</span></th>
+                        <td>
+                            <input class="form-control" id="pass" type="password" name="user_pass" />
+							<span id="tishi" style="color:#f00"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>确认密码<span class="form-required">*</span></th>
+                        <td>
+                           <input class="form-control" id="passs" type="password" name="user_passs" />
+						   <span id="tishi_two" style="color:#f00"></span>
+                        </td>
+                    </tr>
+					<input type="hidden" value="{$data.id}" id="hid" name="hid">
+                </table>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" id="sub" class="btn btn-primary js-ajax-submit">修改</button>
+                        <a class="btn btn-default" href="{:url('AdminIndex/index')}">返回</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+   </div>
+   <script src="__STATIC__/js/admin.js"></script>
+   <!--要想实现提示的ajax表单,必须引用此JS,但是引用了这个JS,表单input就不能带REQUIRED-->
+		
+ </body>
+ <script type="text/javascript">
+	$('#pass').change(function(){
+		$.get("{:url('AdminIndex/validatePass')}",{hid:$('#hid').val(),pass:$('#pass').val()},function(res){
+			if(res=='密码不一样'){
+				$('#tishi').text('请填写正确的原密码');
+				$('#sub').attr('disabled',true);
+			}else if(res=='密码一样'){
+				$('#tishi').text('');
+				$('#sub').attr('disabled',false);
+			}
+		});
+	});
+	$('#passs').change(function(){
+		var old_pass = $('#pass').val();
+		var new_pass = this.value;
+		if(old_pass===new_pass){
+			$('#tishi_two').text('新密码与原密码不能一样');
+			$('#sub').attr('disabled',true);
+		}
+		else if(old_pass!==new_pass){
+			$('#tishi_two').text('');
+			$('#sub').attr('disabled',false);
+		}
+	});
+ </script>

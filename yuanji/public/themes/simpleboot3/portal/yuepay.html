@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title id="AgentSiteName">余额支付</title>
+	  <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <link type="text/css" rel="stylesheet" href="__STATIC__/Recharge.css?16030901" />
+    <script type="text/javascript" src="__STATIC__/jquery.js"></script>
+     
+	 <include file="public@head"/>
+	  <hook name="before_head_end"/>
+</head>
+<body class="body-white" >
+<include file="public@nav"/>
+<div class="container tc-main">
+<form action="" method="post" name="E_FORM"> 
+ 
+   <div class="row">
+        <div class="col-md-12">
+            
+			 <h2 class="container_h2">支付详情</h2>
+            
+              <div class="tc-box article-box">
+					
+                    <table  style="font-size: 13px; line-height:35px" cellpadding="0" cellspacing="0" >
+
+					<tr>
+							<td width=90>总余额：</td>
+							<td>{$zongyu}元</td>
+						 
+						</tr>
+                       
+						<tr>
+							<td>商品价格：</td>
+							<td>{$money}元  </td>
+							 
+						</tr>
+ 
+                        <tr>
+                            <td class="field">支付金额：</td>
+                            <td class="fieldVal" valign="middle">
+                              <input type="text" name="zhimoney" value="{$money}" disabled="disabled" style="width:100px;height:30px">
+								 
+                            </td>
+                        </tr>
+                        
+  </table> 
+						  
+				<table  style="font-size: 13px; line-height:35px" cellpadding="0" cellspacing="0" >
+						
+						 
+                        <tr>
+                            <td class="field">&nbsp;</td>
+                            <td class="fieldVal" height="70" valign="bottom"><button type="" value="下一步" class="payBtn " id="payBtn"  />确认付款</button></td>
+                        </tr>
+                    </table>
+                    <div class="faqQuestion">
+                        <div class="faqTitle">常见支付问题：</div>
+                        <div class="questionContent">
+                            <div class="question">问：在线加款多久能到账？</div>
+                            <div class="answer">答：一般在线支付都是能在支付成功后即时到账的，但也有可能会因网络原因导致延时，大概等待10几分钟左右也能正常到账。</div>
+                            <div class="question">问：如果超过10分钟还未到账怎么办？</div>
+                            <div class="answer">答：与网站客服联系，核对汇款记录后帮你补款。</div>
+                            <div class="question">问：在线加款的手续费是怎么回事？</div>
+                            <div class="answer">答：手续费由第三方交易平台收取（如：支付宝、财付通等），我们并不收取任何费用。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <input type="hidden" name="shangid" value="{$articleId}">
+	 <input type="hidden" name="son" value="{$BillNo}">
+	 <input type="hidden" name="adderss" value="{$adderss}">
+<input type="hidden" name="zhimoney" value="{$money}" id="zhimoney">
+<input type="hidden" name="" value="{$zongyu}" id="zongyu">
+    </form>
+    <div class="frameModal" id="mask">
+        <div class="frameback"></div>
+        <div class="maskCenter">
+            <div class="maskTitle" style="text-align:left;">登录平台支付<a href="javascript:;" class="frameClose"></a></div>
+            <div class="resultTxt">请您在新打开的支付平台页面进行支付</div>
+            <div class="maskBtn">
+                <input type="button" value="支付完成" class="resultBtn" id="payOK" />
+                &nbsp;&nbsp;&nbsp;
+                <input type="button" value="关闭" class="resultBtn" onclick="location.href=location.href" />
+            </div>
+        </div>
+    </div>
+    <div id="qrFrame" class="frameModal">
+        <div class="frameback"></div>
+        <div id="wx-maskCenter" class="framebody">
+            <div class="framehead"><span id="m_title"></span><a href="javascript:;" class="frameClose"></a></div>
+            <div style="color:#5b5b5b;">
+                <p style="margin-bottom:0;font-size:24px;" id="m_head"></p>
+                <p style="font-size:14px;">总计支付金额<span style="color:#ff5a00" id="m_money"></span>元</p>
+            </div>
+            <div class="qr-code qr-code-weixin">
+                <div class="qr-code-back"></div>
+                <iframe id="iframeQR" frameborder="0" align="middle"></iframe>
+            </div>
+            <div id="wxTimeTips" style="margin-top:36px;font-size:14px;color:#919191"></div>
+        </div>
+    </div>
+    <div id="payResult" class="frameModal">
+        <div class="frameback"></div>
+        <div class="framebody" style="height:490px">
+            <div class="framehead"><span>支付结果</span><a href="javascript:;" class="frameClose"></a></div>
+            <div class="frame-content">
+                <p class="frame-result"><span>支付成功，正在跳转...</span></p>
+                <p class="frame-direct"><a href="javascript:">&gt;&gt;手动跳转到结果页</a></p>
+            </div>
+            <div class="frame-content">
+                <p class="frame-result"><span class="fail">支付失败，原因</span></p>
+                <p class="frame-control"><input id="frameRepay" type="button" value="重新充值" /><input id="frameClose" type="button" style="margin-left:16px" value="关闭" /></p>
+            </div>
+        </div>
+
+    </div>
+<script type="text/javascript">
+	var zongyu=$("#zongyu").val();
+	var zhimoney=$("#zhimoney").val();
+	$("#payBtn").click(function(){
+		if(parseInt(zhimoney)>parseInt(zongyu))
+		{
+			alert("余额不足请充值");
+			$(this).attr("type","button");
+			return false;
+		}else
+		{
+			$(this).attr("type","submit");
+		}
+	});
+	</script>
+</div><include file="public@footer"/>
+
+	<include file="public@scripts"/>
+<hook name="before_body_end"/>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>{:lang('USER_INDEXADMIN_INDEX')}</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('user/adminIndex/index')}">
+        用户ID：
+        <input class="form-control" type="text" name="uid" style="width: 200px;" value="{:input('request.uid')}"
+               placeholder="请输入用户ID">
+        关键字：
+        <input class="form-control" type="text" name="keyword" style="width: 200px;" value="{:input('request.keyword')}"
+               placeholder="用户名/昵称/邮箱">
+		用户
+		<select class="form-control" name="type">
+		<php>$arr=[
+		['id'=>0,'name'=>'全部用户'],
+		['id'=>5,'name'=>'注册会员'],
+		['id'=>4,'name'=>'会员'],
+		['id'=>3,'name'=>'代理']
+		];</php>
+			<volist name="arr" id="a">
+			<option value="{$a['id']}" 
+			<eq name="$a['id']" value=":input('request.type')"> selected="selected" </eq> >{$a['name']}</option>
+			</volist>
+		</select>
+		时间选择：
+		<php>
+		$time_type=[
+		['id'=>0,'name'=>'--请选择--'],
+		['id'=>1,'name'=>'收益时间'],
+		['id'=>2,'name'=>'注册时间'],
+		];
+		</php>
+		<select class="form-control" name="time_type" id="time_type">
+			<volist name="$time_type" id="b">
+			<option value="{$b['id']}" 
+			<notempty name=":input('param.time_type')">
+				<eq name="$b['id']" value=":input('param.time_type')" >selected="selected"</eq>
+				<else />
+				<eq name="$b['id']" value="1" >selected="selected"</eq>
+			</notempty>
+			>{$b['name']}</option>
+			</volist>
+		</select>
+		&nbsp;时间(起)：
+		<input class="form-control" type="date" id="stime" name="stime" style="width: 200px;" value="{:input('param.stime')}">
+		&nbsp;时间(至)：
+		<input class="form-control" type="date" id="etime" name="etime" style="width: 200px;" value="{:input('param.etime')}">
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('user/adminIndex/index')}">清空</a>
+    </form>
+    <form method="post" class="js-ajax-form">
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>级别</th>
+                <th>邮箱</th>
+                <th>手机</th>
+                <th>注册时间</th>
+                <th>上次登录时间</th>
+                <th>状态</th>
+				<th>收益</th>
+				<th>余额</th>
+                <th>上级</th>
+                <th>省份</th>
+                <th>操作</th>
+				<th>消费/收益明细</th>
+				<th>用户操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <php>
+                $user_statuses=array("0"=>lang('USER_STATUS_BLOCKED'),"1"=>lang('USER_STATUS_ACTIVATED'),"2"=>lang('USER_STATUS_UNVERIFIED'));
+            </php>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo['user_nickname']?$vo['user_nickname']:lang('NOT_FILLED')}</td>
+                    <td>
+            <switch name="$vo.user_type">
+                <case value="1" >系统管理员</case>
+                <case value="2" >省代理</case>
+                <case value="3"><span style="color:#f00">代理商</span></case>
+                <case value="4">会员</case>
+                <case value="5">注册会员</case>
+                <default /> 
+            </switch>
+                    </td>
+                    <td>{$vo.user_email}</td>
+                    <td>{$vo.mobile}</td>
+                    <td>{:date('Y-m-d H:i:s',$vo['create_time'])}</td>
+                    <td>{:date('Y-m-d H:i:s',$vo['last_login_time'])}</td>
+					<td>
+						<if condition="$vo['user_status']">
+							启用
+							<else />
+							拉黑
+						</if>
+					</td>
+                    <td>
+						<notempty name="$vo['money']">
+						<!--有收益时候-->
+							收益￥{$vo['moneys']['money_shouyi']}
+							<else />
+							收益￥0
+						</notempty>
+						<notempty name="$vo['money']">
+						<!--有收益时候-->
+							分红￥{$vo['moneys']['money_fenHong']}
+							购物券￥{$vo['moneys']['jf']}
+							<else />
+							分红￥0
+							购物券￥0
+						</notempty>
+						<eq name="$vo['user_type']" value="3">
+								<span style="color:#f00">代理收益￥{$vo['daili']}</span>
+						</eq>
+					</td>
+					<td>
+						<notempty name="vo['money']">
+							￥{$vo['moneys']['money_sum']+$vo['daili']}
+							<else />
+							￥0
+						</notempty>
+						<neq name="aqx" value="6">
+						<a href="{:url('AdminIndex/moneycharge',array('id'=>$vo['id']))}"> 充值
+						</neq>
+						</a>
+					</td>
+                    <td>
+             <!--$vo['user_login']?$vo['user_login']:($vo['mobile']?$vo['mobile']:lang('THIRD_PARTY_USER'))-->
+                        {$vo['fName']|default='暂无上级'}
+                    </td>
+                    <td>{$vo['province']['province']|default='暂无省份'}</td>
+                    <td>
+                        <neq name="vo.id" value="1">
+                            <empty name="vo.user_status">
+                                <a href="{:url('adminIndex/cancelban',array('id'=>$vo['id']))}"
+                                   class="js-ajax-dialog-btn"
+                                   data-msg="激活此用户?">启用</a>
+                                <else/>
+                                <a href="{:url('adminIndex/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"
+                                   data-msg="将此用户拉黑?">拉黑</a>
+                            </empty>
+                            <else/>
+                            <a style="color: #ccc;">拉黑</a>
+
+                        </neq>
+                        <!-- <if condition="$vo['user_type'] eq 3 AND $vo['user_status']==1">
+                            <a href="{:url('adminIndex/noDaiLi',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"
+                               style="color:#999;" data-msg="确定将此用户取消代理？">取消代理</a>
+                            <elseif condition="$vo['user_type'] neq 3 AND $vo['user_status'] eq 1" />
+                                <a href="{:url('adminIndex/offDaiLi',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"
+                                   data-msg="确定将此用户设为代理？">设为代理</a>
+                            <else />
+                        </if> -->
+                    </td>
+					<td>
+						<lt name="$vo['user_type']" value="5">
+							<php>
+								switch($vo['user_type']){
+									case '3' :$user_type=3;break;
+									case '4' :$user_type=4;break;
+									case '5' :$user_type=5;break;
+								}	
+							</php>
+							<a class="btn btn-success btn-sm xiaofei" href="
+							__URL__/../admin_index/spend?id={$vo.id}&pid={$vo.pid}&uname={$vo.user_nickname}&user_type={$user_type}
+							">消费明细</a>
+							<a class="btn btn-info btn-sm shouyi" href="
+							__URL__/../admin_index/profit?id={$vo.id}&pid={$vo.pid}&user_type={$user_type}
+							">收益明细</a>
+						</lt>
+					</td>
+					<td>
+					<a href="{:url('admin_index/exits',['id'=>$vo.id])}" class="btn btn-sm btn-warning">修改信息</a>
+					</td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="pagination">{$page}</div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+	$('.xiaofei').click(function (){
+		var url = this.href
+		var time_type = $('#time_type').val();
+		if(time_type==1){
+			this.href=url+'&time_type=1&stime='+$('#stime').val()+'&etime='+$('#etime').val();
+		}
+		//alert(this.href);
+
+		//return false;
+	});
+	$('.shouyi').click(function (){
+		var url = this.href
+		var time_type = $('#time_type').val();
+		if(time_type==1){
+			this.href=url+'&time_type=1&stime='+$('#stime').val()+'&etime='+$('#etime').val();
+		}
+		//alert(this.href);
+
+		//return false;
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>- 个人中心</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content="">
+    <include file="public@head"/>
+    <style>
+        .control-label {
+            font-weight: bold;
+            float: left;
+            width: 70px;
+        }
+    </style>
+</head>
+<body class="body-white" id="top">
+<include file="public@nav" />
+<div class="container tc-main">
+    <div class="row">
+        <div class="col-md-3" style="">
+            <include file="public@usernav" />
+        </div>
+        <div class="col-md-9">
+            <div class="tabs">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#one" data-toggle="tab"><i class="fa fa-list-alt"></i>&nbsp;
+                    我是<eq name="$type" value="3">代理</eq><eq name="$type" value="2">省代</eq>
+					</a></li>
+                </ul>
+				<!-- <div class="tab-content">
+                    <div class="tab-pane active" id="one">
+                        <br>
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                            <tr>
+                               
+                                <th class="">总金额：￥{$summoney}元 充值金额：￥{$chongzhi}元</th>
+                                <th>自身收益：￥{$my}元 已提金额：￥{$tixian}元 提现申请中：￥{$shenqing}元</th>
+                                <th><eq name="$type" value="3">代理</eq><eq name="$type" value="2">省代</eq>收益： ￥{$moneys}元</th>
+                                    
+                           
+                            </tr>
+                            </thead>
+                            <tbody>
+                           
+                                <tr>
+                                    <td width="280"><a href="{:url('user/profile/MoneyDetail')}" class="btn btn-primary">具体明细</a>
+                                    </td>
+                                    <td>
+                                     <a href="{:url('user/profile/MoneyCharge')}" class="btn btn-warning">我要充值</a> <if condition="$user['user_type'] gt 4">
+                                您的等级不够,无法获得奖励
+                                <else if condition="$user['user_type'] elt 4" />
+                              <a href="{:url('user/profile/MoneyTiXian')}" class="btn btn-success">我要提现</a>
+                            </if>
+                                    </td>
+                                    <td>
+                                    <a href="{:url('user/profile/xiaxian')}" class="btn btn-primary">下线消费明细</a>
+                                    </td>
+                                 
+                       
+                                </tr>
+                         
+                            </tbody>
+                        </table>
+                    </div>
+
+                   
+                </div> -->
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-md-12" style="overflow: auto;">
+                        <ul class="list-group col-md-4 col-xs-12" style="margin:0;padding: 0;">
+                       <li class="list-group-item" style="font-weight: bold;">账户总余额：￥{$summoney}元 <br/>充值金额：￥{$chongzhi}元</li>
+                       <li class="list-group-item"><a href="{:url('user/profile/MoneyDetail')}" class="btn btn-primary">具体明细</a></li>
+                      
+                        </ul>
+                        <ul class="list-group col-md-6 col-xs-12 pull-left" style="margin:0;padding: 0;">
+                       <li class="list-group-item" style="font-weight: bold;">自身收益：￥{$my}元 已提金额：￥{$tixian}元 <br/>提现申请中：￥{$shenqing}元 购物券:￥{$jffanxain}元</li>
+                       <li class="list-group-item"><a href="{:url('user/profile/MoneyCharge')}" class="btn btn-warning">我要充值</a> <if condition="$user['user_type'] gt 4">
+                                您的等级不够,无法获得奖励
+                                <else if condition="$user['user_type'] elt 4" />
+                              <a href="{:url('user/profile/MoneyTiXian')}" class="btn btn-success">我要提现</a>
+                            </if>
+                                    </td>
+                                    <td>
+                        </li>
+                      
+                        </ul>
+                        <ul class="list-group col-md-2 col-xs-12 pull-left" style="margin:0;padding: 0;">
+                       <li class="list-group-item" style="font-weight: bold;"><eq name="$type" value="4">会员</eq><eq name="$type" value="3">代理</eq><eq name="$type" value="2">省代</eq>收益： ￥{$moneys}元</li>
+                       <li class="list-group-item" ><a href="{:url('user/profile/xiaxian')}" class="btn btn-primary">分享消费明细</a></li>
+                     
+                        </ul>
+                    </div>
+                </div>
+                <!--div class="tab-content">
+                    <div class="tab-pane active" id="one">
+                        <br>
+                        <div class="row">
+                            <div class="col-md-9" style="padding:0 20% 0 5%;">
+								<h5 style="font-weight:bold;padding-bottom:2%">账户余额: <span style="padding-left: 10%">{$summoney} ￥</span></h5>
+                                <div class="form-group" style="display:flex;flex-direction:row;justify-content:space-between">
+                                    <div><label class="control-label" for="input-user_nicename">自身收益</label></div>{$my}￥
+                                    <a href="{:url('user/profile/MoneyDetail')}" class="btn btn-primary btn-xs">明细</a>
+                                </div>
+                                <div class="form-group" style="display:flex;flex-direction:row;justify-content:space-between">
+                                    <div><label class="control-label" for="input-user_nicename"><eq name="$type" value="3">代理</eq><eq name="$type" value="2">省代</eq>收益</label></div>{$moneys}￥
+                                    <a href="{:url('user/profile/xiaxian')}" class="btn btn-primary btn-xs">明细</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div--!>
+            </div>
+        </div>
+    </div>
+    
+</div><include file="public@footer" />
+<!-- /container -->
+<include file="public@scripts" />
+</body>
+</html>

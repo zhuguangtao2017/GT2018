@@ -1,0 +1,338 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>订单管理</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('user/user_order/index')}">
+        订单号：
+        <input class="form-control" type="text" name="uid" id="uid" style="width: 200px;" value="{:input('param.uid')}"
+               placeholder="请输入订单号">
+        购买用户：
+        <input class="form-control" type="text" name="keyword" id="keyword" style="width: 200px;" value="{:input('param.keyword')}"
+               placeholder="用户名/手机号/邮箱">
+
+		支付方式:
+		<php>
+			$pay_type = array(
+				array('id'=>0,'name'=>'--请选择--'),
+				array('id'=>1,'name'=>'支付宝'),
+				array('id'=>2,'name'=>'微信支付'),
+				array('id'=>3,'name'=>'余额'),
+				array('id'=>4,'name'=>'银行卡'),
+			);
+		</php>
+		<select class="form-control" name="pay_type" id="pay_type">
+			<volist name="pay_type" id="p">
+				<option value="{$p['id']}"
+				<eq name="$p['id']" value=":input('param.pay_type')" >selected="selected"</eq>
+				>{$p['name']}</option>
+			</volist>
+		</select>
+
+		地址：
+		<select name="pid"class="form-control" id="pro">
+		<option value="0">--请选择省份--</option>
+		<volist name="province" id="p">
+			<option value="{$p['id']}" 
+			<eq name="$p['id']" value=":input('param.pid')">selected="selected"</eq> >
+			{$p['province']}
+			</option>	
+		</volist>
+		</select>
+<br />
+		&nbsp;时间(起)：
+		<input class="form-control" type="date" id="stime" name="stime" style="width: 200px;margin-top:0.5%" <notempty name="now">
+			value="{$now}"
+			<else />
+			value="{:input('param.stime')}"
+		</notempty>
+		>
+		&nbsp;时间(至)：
+		<input class="form-control" type="date" id="etime" name="etime" 
+		<notempty name="last">
+		value="{$last}"
+		<else />
+		value="{:input('param.etime')}"
+		</notempty>
+		>
+		<input type="hidden" value="{:input('param.uname')}" name="uname" id="uname" />
+		<input type="hidden" value="{$sNum|default=input('param.sNum')}" name="sNum" id="sNum" />
+		<input type="hidden" value="{$user_type|default=input('param.user_type')}" name="user_type" id="user_type" />
+		<input type="hidden" value="{$id|default=input('param.id')}" name="id" id="id" />
+		<input type="hidden" value="{$ids|default=input('param.ids')}" name="ids" id="ids" />
+
+		<input type="hidden" value="{$address|default=input('address')}" name="address" id="address" />
+		<input type="hidden" value="{$address_ids|default=input('address_ids')}" name="address_ids" id="address_ids" />
+
+		<input type="submit" class="btn btn-primary" value="搜索" style="margin-top:0.5%"/>
+        <a class="btn btn-danger" href="{:url('user/user_order/index')}" style="margin-top:0.5%">清空</a>
+    </form>
+	<notempty name=":input('param.id')">
+		<if condition="@$address neq ''">
+		<h4>根据搜索总条件得:<br />{:input('uname')}<!--该用户-->
+		的{:input('param.address')}侧用户下所有用户消费总和￥{$money_sumsss},{:input('param.address')}侧用户下级{$sNum|default=''}人</h4>
+		<elseif condition="@$money_sum neq ''">
+		<h4>根据搜索总条件得:<br />{:input('uname')}<!--该省代理-->及该省代理下所有用户消费总和￥{$money_sum},该省代理下级{$sNum|default=''}人</h4>
+		<elseif condition="@$money_sums neq ''">
+		<h4>根据搜索总条件得:<br />{:input('uname')}<!--该代理-->及代理下所有用户消费总和￥{$money_sums},该代理下级{$sNum|default=''}人</h4>
+		<elseif condition="@$money_sumss neq ''">
+		<h4>根据搜索总条件得:<br />{:input('uname')}<!--该会员-->及该会员下所有用户消费总和￥{$money_sumss},该会员下级{$sNum|default=''}人</h4>
+		<else />
+		<h4>暂无下级或下级暂无消费</h4>
+		</if>
+	</notempty>
+	<notempty name="shi">
+	<h4>
+	<php>
+	if($now&&$last){
+		$str = $now.'到'.$last.'的';
+	}
+	if( !empty($_POST['stime']) && !empty($_POST['etime']) ){
+		$str = '从'.$_POST['stime'].'到'.$_POST['etime'].'的';
+	}
+	else if(!empty($_POST['stime'])){
+		$str = '从'.$_POST['stime'].'开始的';
+	}
+	else if (!empty($_POST['etime'])){
+		$str = '从'.$_POST['etime'].'开始的';
+	}
+	$pay='';
+	if(!empty($_POST['pay_type'])){
+		foreach($pay_type as $v){
+			if($v['id']==$_POST['pay_type']){
+				$pay = $v['name'];
+			}
+		}
+	}
+	</php>
+	{$str}{$pay}订单金额总和￥{$shi}
+	</h4>
+	</notempty>
+	<notempty name="goushi">
+	<h4>订单金额总和￥{$goushi}</h4>
+	</notempty>
+    <form method="get" class="form js-ajax-form" id="form">
+	<!--js-ajax-submit-->
+		<if condition="@$user_type!=''||input('param.user_type')!='' ">
+			<a class="btn btn-default" id="a" style="margin-bottom:1%;" href="__URL__/../user_order/index?address=a" data-wait="1500">
+			A侧</a>
+			<a class="btn btn-default" id="b" style="margin-bottom:1%;" href="__URL__/../user_order/index?address=b" data-wait="1500">
+			B侧</a>
+		</if>
+	 
+		<button class="btn btn-success pull-right js-ajax-submit" id="editAddress" style="margin-bottom:1%;" type="submit" data-wait="1500">提交发货单号</button>
+	 
+		<button type="button" class="btn btn-info pull-right" name="order" id="editTime" style="margin-bottom:1%;margin-right:0.5%;">{$order}</button>
+		<input type="hidden" name="hson" id="hson"><!--修改的订单号-->
+		<input type="hidden" name="hstr" id="hstr"><!--修改的订单号对应输入的发货单号-->
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>订单号</th>
+				<th>购买用户</th>
+                <th>收货人</th>
+                <th>下单时间</th>
+				<th>支付类型</th>
+                <th>商品名称</th>
+				<th>商品价格</th>
+				<th>收货地址</th>
+               <th>发货单号</th> 
+            </tr>
+            </thead>
+            <tbody>
+
+			<volist name="userOrder" id="vo">
+                <tr>
+					<td>{$vo['id']}</td>
+                    <td class="son">{$vo['son']}</td>
+                    
+					<td>{$vo['user_nickname']?$vo['user_nickname']:($vo['user_email']?$vo['user_email']:$vo['mobile'])}</td>
+					<td>{$vo['name']}</td>
+                    <td>{$vo['time']|date='Y-m-d H:i:s',###}</td>
+					<td>{$vo['fs']}</td>
+                    <td><!--{vo['get_por_post']['post_title']}-->{$vo['pname']}</td>
+					<td>￥{$vo['post_source']}</td>
+					<td>{$vo['addresss']}</td>
+                    <td>
+					<notempty name="vo['fhd']">
+						
+						<input type="text" class="a form-control" style="color:#f00" placeholder="{$vo['fhd']}">
+						<else />
+					 
+							<input type="text" class="a form-control" style="" placeholder="请输入发货单号">
+							 
+					</notempty>
+					</td>
+                    
+                        <!--<neq name="vo.id" value="1">
+                            <empty name="vo.user_status">
+                                <a href="{:url('adminIndex/cancelban',array('id'=>$vo['id']))}"
+                                   class="js-ajax-dialog-btn"
+                                   data-msg="{:lang('ACTIVATE_USER_CONFIRM_MESSAGE')}">{:lang('ACTIVATE_USER')}</a>
+                                <else/>
+                                <a href="{:url('adminIndex/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"
+                                   data-msg="{:lang('BLOCK_USER_CONFIRM_MESSAGE')}">{:lang('BLOCK_USER')}</a>
+                            </empty>
+                            <else/>
+                            <a style="color: #ccc;">{:lang('BLOCK_USER')}</a>
+
+                        </neq>-->
+                        <!-- <neq name="vo.id" value="1">
+                            <empty name="vo.user_status">
+                                <a href="{:url('adminIndex/cancelban',array('id'=>$vo['id']))}"
+                                   class="js-ajax-dialog-btn"
+                                   data-msg="{:lang('ACTIVATE_USER_CONFIRM_MESSAGE')}">{:lang('ACTIVATE_USER')}</a>
+                                <else/>
+                                <a href="{:url('adminIndex/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"
+                                   data-msg="{:lang('BLOCK_USER_CONFIRM_MESSAGE')}">{:lang('BLOCK_USER')}</a>
+                            </empty>
+                            <else/>
+                            <a style="color: #ccc;">{:lang('BLOCK_USER')}</a>
+                             
+                        </neq> -->
+                    
+                </tr>
+			</volist>
+            </tbody>
+        </table>
+        <div class="pagination">{$page}</div>
+		<!--
+		<input type="button" id="noAddress" style="display:none;" class="btn btn-info pull-right" value="取消修改">
+		-->
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+	$(function (){
+		if($('#uid').val()==0){
+			$('#uid').val('');
+		}
+		if($('#keyword').val()==0){
+			$('#keyword').val('');
+		}
+	 });
+	$('.a').change(function (){
+		var son = $(this).parents('td').siblings().eq(1).html();
+		var newSon = $(this).val();
+		var hson = $('#hson').val();
+		var hstr = $('#hstr').val();
+		$('#hson').val(hson+','+son);
+		$('#hstr').val(hstr+','+newSon);
+	});
+	$('#editAddress').click(function (){
+		var hson = $('#hson').val();
+		var hstr = $('#hstr').val();
+		if(hson=='' || hstr==''){
+			alert('请填写订单号或修改订单');
+			return false;
+		}
+		$('#form').attr('action',"{:url('user_order/editAddress')}");
+		//$('#form').submit();	因为是ajax提交,所以不能用表单form,使用自带ajax
+	});
+	var id = $('#id').val();
+	var ids = $('#ids').val();
+	var son = $('#uid').val();
+	var pid = $('#pro').val();
+	var keyword = $('#keyword').val();
+	var pay_type = $('#pay_type').val();
+	var stime = $('#stime').val();
+	var etime = $('#etime').val();
+	var sNum = $('#sNum').val();
+	var user_type = $('#user_type').val();
+	var address = $('#address').val();
+	var address_ids = $('#address_ids').val();
+	id==''?id=0:id;
+	//stime==''?stime=0:stime;
+	//etime==''?etime=0:etime;
+	son==''?son=0:son;
+	pid==''?pid=0:pid;
+	keyword==''?keyword=0:keyword;
+	pay_type==''?pay_type=0:pay_type;
+	sNum==''?sNum=0:sNum;
+	address==''?address='':address;
+	user_type==''?user_type=0:user_type;
+	address_ids==''?address_ids=0:address_ids;
+	$('#editTime').click(function (){
+		//alert(son);
+		//alert(keyword);
+		if(ids){
+			//跳转到用户
+			var pid = $('#pro').val();
+			if($(this).text()=='正序排列'){
+			var pid = $('#pro').val();
+			//alert('http://www.yuanjijituan.com/thinkcmf5/public/user/user_order/index/type/ASC/pid/'+pid+'/uid/'+son+'/keyword/'+keyword+'/pay_type/'+pay_type+'/stime/'+stime+'/etime/'+etime+'/sNum/'+sNum+'/user_type/'+user_type+'/id/'+id+'/uname/'+"{:input('param.uname')}"+'/user_type/'+user_type+'/address_ids/'+address_ids+'/address/'+address+'/ids/'+ids);
+			location.href='http://www.yuanjijituan.com/thinkcmf5/public/user/user_order/index/type/ASC/pid/'+pid+'/uid/'+son+'/keyword/'+keyword+'/pay_type/'+pay_type+'/stime/'+stime+'/etime/'+etime+'/sNum/'+sNum+'/user_type/'+user_type+'/id/'+id+'/uname/'+"{:input('param.uname')}"+'/user_type/'+user_type+'/address_ids/'+address_ids+'/address/'+address+'/ids/'+ids;
+			}else{
+				var pid = $('#pro').val();
+			//alert('http://www.yuanjijituan.com/thinkcmf5/public/user/user_order/index/type/DESC/pid/'+pid+'/uid/'+son+'/keyword/'+keyword+'/pay_type/'+pay_type+'/stime/'+stime+'/etime/'+etime+'/sNum/'+sNum+'/user_type/'+user_type+'/id/'+id+'/uname/'+"{:input('param.uname')}"+'/user_type/'+user_type+'/address_ids/'+address_ids+'/address/'+address+'/ids/'+ids);
+			location.href='http://www.yuanjijituan.com/thinkcmf5/public/user/user_order/index/type/DESC/pid/'+pid+'/uid/'+son+'/keyword/'+keyword+'/pay_type/'+pay_type+'/stime/'+stime+'/etime/'+etime+'/sNum/'+sNum+'/user_type/'+user_type+'/id/'+id+'/uname/'+"{:input('param.uname')}"+'/user_type/'+user_type+'/address_ids/'+address_ids+'/address/'+address+'/ids/'+ids;
+			}
+			//return false;
+		}
+		/*else{
+			var idss = "{:input('param.ids')}";
+			alert(ids);
+			//alert($(this).text());
+			if($(this).text()=='正序排列'){
+			var pid = $('#pro').val();
+			//alert('http://www.yuanjijituan.com/thinkcmf5/public/user/user_order/index/type/ASC/pid/'+pid+'/uid/'+son+'/keyword/'+keyword+'/pay_type/'+pay_type+'/stime/'+stime+'/etime/'+etime+'&sNum='+sNum+'&user_type='+user_type+'&uname='+"{:input('param.uname')}"+'/ids/'+ids);
+			location.href='http://www.yuanjijituan.com/thinkcmf5/public/user/user_order/index/type/ASC/pid/'+pid+'/uid/'+son+'/keyword/'+keyword+'/pay_type/'+pay_type+'/stime/'+stime+'/etime/'+etime+'/sNum/'+sNum+'/user_type/'+user_type+'/id/'+id+'/uname/'+"{:input('param.uname')}"+'/ids/'+ids;
+			}else{
+				var pid = $('#pro').val();
+			//alert('http://www.yuanjijituan.com/thinkcmf5/public/user/user_order/index/type/DESC/pid/'+pid+'/uid/'+son+'/keyword/'+keyword+'/pay_type/'+pay_type+'/stime/'+stime+'/etime/'+etime+'&sNum='+sNum+'&user_type='+user_type+'&uname='+"{:input('param.uname')}"+'/ids/'+ids);
+			location.href='http://www.yuanjijituan.com/thinkcmf5/public/user/user_order/index/type/DESC/pid/'+pid+'/uid/'+son+'/keyword/'+keyword+'/pay_type/'+pay_type+'/stime/'+stime+'/etime/'+etime+'/sNum/'+sNum+'/user_type/'+user_type+'/id/'+id+'/uname/'+"{:input('param.uname')}"+'/ids/'+ids;
+			}
+		}*/
+		//return false;
+	});
+	$('#a').click(function (){
+		//alert(this.href+'&id='+id+'&uid='+son+'&pid='+pid+'&keyword='+'&pay_type='+pay_type+'&stime='+stime+'&etime='+etime+'&sNum='+sNum+'&user_type='+user_type+'&uname='+"{:input('uname')}"+'&ids='+ids);
+		this.href+='&id='+id+'&uid='+son+'&pid='+pid+'&keyword='+'&pay_type='+pay_type+'&stime='+stime+'&etime='+etime+'&sNum='+sNum+'&user_type='+user_type+'&uname='+"{:input('param.uname')}"+'&ids='+ids
+		//return false;
+	});
+	$('#b').click(function (){
+		//alert(this.href+'&id='+id+'&uid='+son+'&pid='+pid+'&keyword='+'&pay_type='+pay_type+'&stime='+stime+'&etime='+etime+'&sNum='+sNum+'&user_type='+user_type+'&uname='+"{:input('uname')}"+'&ids='+ids);
+		this.href+='&id='+id+'&uid='+son+'&pid='+pid+'&keyword='+'&pay_type='+pay_type+'&stime='+stime+'&etime='+etime+'&sNum='+sNum+'&user_type='+user_type+'&uname='+"{:input('param.uname')}"+'&ids='+ids
+		//return false;
+	});
+	$(function (){
+		var ab = $('#address').val();
+		if(ab=='a'){
+			$('#a').addClass('btn-success');
+		}else if(ab=='b'){
+			$('#b').addClass('btn-success');
+		}
+	})
+	/*
+	$('li.active>a').text('订单管理');
+	$('#editAddress').click(function (){
+		$(this).attr('class','btn btn-primary pull-right').val('确认修改');
+		$('.a').fadeIn(300);
+		$('#noAddress').slideDown(300);
+		$('#noAddress').click(function (){
+			$('.a').slideUp(300);
+			$(this).hide();
+			$('#editAddress').attr('type','button');
+			$('#editAddress').attr('class','btn btn-info pull-right b').val('修改发货单号');
+		});
+		$('.b').click(function (){
+			$('#form').attr('action',"{:url('editAddress')}");
+			$('#.b').attr('type','submit');
+		});
+	});
+	$('.a').each(function (){
+		$(this).change(function (){
+			//var inx = $('.a').parentsUntil('tr').index( $('.a').parentsUntil('tr') );
+			var inx = $('.a').parentsUntil('tr').children('td').first().text();
+			var son = $('.son').eq(inx).text();
+			alert(inx);
+			alert(son);
+		});
+	});
+	*/
+</script>
+</body>
+</html>

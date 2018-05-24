@@ -1,0 +1,240 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>{:lang('USER_INDEXADMIN_INDEX')}22</a></li>
+    </ul>
+    <form style="overflow:hidden;padding-bottom:0.5%" class="well form-inline margin-top-20" method="post" action="{:url('user/UserMoneyFloat/index')}" id="form">
+	<div style="padding:0 2%;">
+			       用户ID：
+        <input class="form-control" type="text" id="uid" name="uid" style="width: 200px;" value="{:input('param.uid')}"
+               placeholder="请输入用户ID">
+        用户名：
+        <input class="form-control" type="text" id="keyword" name="keyword" style="width: 200px;" value="{:input('param.keyword')}"
+               placeholder="用户名/手机号/邮箱">
+
+		资金类型:
+		<php>$arr = [
+			['id'=>1,'name'=>'--收益--'],
+			['id'=>2,'name'=>'--提现--'],
+			['id'=>3,'name'=>'--充值--'],
+			['id'=>4,'name'=>'--消费--'],
+			['id'=>5,'name'=>'每日分红'],
+			['id'=>6,'name'=>'-购物券-'],
+			['id'=>7,'name'=>'-手续费-']
+		]</php>
+		<select name="type" id="type" class="form-control">
+			<option value="0">--请选择--</option>
+			<volist name="arr" id="a">
+				<option value="{$a['id']}" 
+				<eq name="$a['id']" value=":input('param.type')" >selected="selected"</eq> >{$a['name']}</option>
+			</volist>
+		</select>
+		支付方式:
+		<php>
+			$pay_type = array(
+				array('id'=>0,'name'=>'--请选择--'),
+				array('id'=>1,'name'=>'支付宝'),
+				array('id'=>2,'name'=>'微信支付'),
+				array('id'=>3,'name'=>'余额'),
+				array('id'=>4,'name'=>'银行卡',
+				),
+			);
+		</php>
+		<select class="form-control" name="pay_type" id="pay_type">
+			<volist name="pay_type" id="p">
+				<option value="{$p['id']}"
+				<eq name="$p['id']" value=":input('param.pay_type')">
+				selected="selected"
+				</eq>
+				>
+				{$p['name']}
+				</option>
+			</volist>
+		</select>
+
+		<input type="hidden" name="this_id" id="this_id" value="{$this_id|default=input('param.this_id')}">
+		<input type="hidden" name="ids" id="ids" value="{$ids|default=input('param.ids')}">
+		<input type="hidden" name="pid" id="pid" value="{$pid|default=input('param.pid')}">
+
+		&nbsp;时间(起)：
+		<input class="form-control" type="date" id="stime" name="stime" style="width: 200px;" 
+		<notempty name="last">
+			value="{$now}"
+			<else />
+			value="{:input('param.stime')}"
+		</notempty>>
+		&nbsp;时间(至)：
+		<input class="form-control" type="date" id="etime" name="etime" style="width: 200px;" 
+		<notempty name="last">
+		value="{$last}"
+		<else />
+		value="{:input('param.etime')}"
+		</notempty>>
+	</div>
+	<div style="margin-top:0.5%;" class="pull-right">
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('user/UserMoneyFloat/index')}">清空</a>
+        <button type="button" class="btn btn-success px"  value="asc">按时间正序</button><button type="button" class="btn btn-info px"  value="desc">按时间倒序</button>
+		<neq name="aqx" value="6">
+		<button type="button" class="btn btn-default" id="export">信息导出</button></neq>
+	</div>
+	<div class="clerafix"></div>
+</form>
+<div class="clerafix"></div>
+<php>
+//1收益  2提现  3充值，4 消费 5 分红
+$str='';
+if(!empty($type_arr['sy'])){
+	$str .= '收益金额为￥'.array_sum($type_arr['sy']).'&nbsp;&nbsp;&nbsp;';
+}
+if(!empty($type_arr['tx'])){
+	$str .= '提现金额为￥'.(array_sum($type_arr['tx'])*-1).'&nbsp;&nbsp;&nbsp;';
+}
+if(!empty($type_arr['cz'])){
+	$str .= '充值金额为￥'.array_sum($type_arr['cz']).'&nbsp;&nbsp;&nbsp;';
+}
+if(!empty($type_arr['xf_wai'])){
+	$str .= '消费金额(外部资金)为￥'.(array_sum($type_arr['xf_wai'])*-1).'&nbsp;&nbsp;&nbsp;';
+}
+if(!empty($type_arr['xf_nei'])){
+	$str .= '消费金额(余额)为￥'.(array_sum($type_arr['xf_nei'])*-1).'&nbsp;&nbsp;&nbsp;';
+}
+if(!empty($type_arr['fh'])){
+	$str .= '分红金额为￥'.array_sum($type_arr['fh']).'&nbsp;&nbsp;&nbsp;';
+}
+$strs='';
+if(!empty($now)&&!empty($last)){
+	$strs = $now.'到'.$last.'的';
+}
+if( !empty($_POST['stime']) && !empty($_POST['etime']) ){
+	$strs = '从'.$_POST['stime'].'到'.$_POST['etime'].'的';
+}
+else if(!empty($_POST['stime'])){
+	$strs = '从'.$_POST['stime'].'开始的';
+}
+else if (!empty($_POST['etime'])){
+	$strs = '从'.$_POST['etime'].'开始的';
+}
+</php>
+<h4>
+
+{$strs}
+<br />{$str}
+</h4>
+    <form method="post" class="js-ajax-form" action="{:url('UserMoneyFloat/allows')}">
+
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户</th>
+                <th>级别</th>
+                <th>金额</th>
+                <th>贡献人</th>
+                <th>类型</th>
+				<th>支付类型</th>
+				<th>时间</th>
+				<neq name="aqx" value="6">
+				<th >提现审核</th></neq>
+            </tr>
+            </thead>
+            <tbody>
+
+            <volist name="detail" id="vo">
+                <tr>
+                    <td>{$vo['user_id']}</td>
+                    <td>
+						{$vo['user_nickname']?$vo['user_nickname']:($vo['mobile']?$vo['mobile']:$vo['user_email'])}
+					</td>
+                    <td>
+						<switch name="vo['user_type']">
+							<case value='2'><span style="color:#f00;">省代理商</span></case>
+							<case value='3'>地方代理</case>
+							<case value='4'>会员</case>
+							<case value='5'>注册会员</case>
+						</switch>
+					</td>
+                    <td>￥{$vo['money']}</td>
+					<td>
+{$vo['froms']['user_nickname']?
+$vo['froms']['user_nickname']:
+($vo['froms']['mobile']?$vo['froms']['mobile']:$vo['froms']['user_email'])}					
+					</td>
+                    <td>
+						<switch name="$vo['type']">
+						<case value='1'>收益</case>
+						<case value='2'>提现</case>
+						<case value='3'>充值</case>
+                        <case value='4'>消费</case>
+						 <case value='5'>每日分红</case>
+						 <case value='6'>购物券</case>
+						 <case value='7'>手续费</case>
+						</switch>
+					</td>
+					<td>{$vo['fs']}</td>
+                    <td>{$vo['time']|date='Y-m-d H:i:s',###}</td>
+
+							<neq name="aqx" value="6">
+				 
+					<td width="100">
+						<eq name="$vo.type" value="2">
+							<switch name="$vo['allow']" >
+							   <case value="0" break=0>
+							   <input type="radio" name="allow[{$i}]" class="a" value="1">通过
+							   <input type="radio" name="allow[{$i}]" class="a" value="2">禁止
+							   <input type="radio" name="allow[{$i}]" class="a" value="0" checked='checked'>未审核
+							   <input type="hidden" name="allow_id[]" value="{$vo.id}">
+							   <input type="text" class="form-control b" name="mark[]" value="" style="width:300px;" placeholder='*请在此填入备注'>
+							   </case>
+							   <case value="1" break=1>
+							   <input type="radio" name="allow[{$i}]" class="a" checked readonly value="1">
+							   <span style="color:#aaf">已通过</span>
+							   <div><input type="text" class="form-control" style="width:300px;display:inline-block;margin-right:5px;" name="mark[]" readonly value="{$vo.mark}">备注</div>
+							  <input type="hidden" name="allow_id[]" value="{$vo.id}">
+							   </case>
+							   <case value="2" break=2>
+							   <input type="radio" name="allow[{$i}]" class="a" value="1">通过
+							   <input type="radio" name="allow[{$i}]" class="a" value="2" checked>
+							   <span style="color:#7CCD7C">未通过</span>
+							   <input type="hidden" name="allow_id[]"  value="{$vo.id}">
+							   <input type="text" class="form-control b" name="mark[]" style="width:200px;" value="{$vo.mark}">备注
+							   </case>
+							</switch>
+						</eq>
+
+					</td></neq>
+                </tr>
+            </volist>
+            </tbody>
+        </table> 
+		<button class="btn btn-primary js-ajax-submit">提交</button>
+        <div class="pagination pull-right">
+		{$page}
+		</div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script src="__STATIC__/jquery.js"></script>
+<script>
+	$(function()
+	{
+		
+		$('li.active>a').text('资金流水');
+		$(".px").click(function()
+		{	
+		   var value = $(this).val();
+			<notempty name="$Think.get.id">location.href='__URL__/../user_money_float/index?id={$Think.get.id}&px='+value+'&uid='+$("#uid").val()+'&etime='+$("#etime").val()+'&keyword='+$("#keyword").val()+'&type='+$("#type").val()+'&stime='+$("#stime").val()+'&pay_type='+$('#pay_type').val()+'&ids='+$('#ids').val()+'&this_id='+$('#this_id').val();
+			<else/>
+			location.href
+			='index?px='+value+'&uid='+$("#uid").val()+'&etime='+$("#etime").val()+'&keyword='+$("#keyword").val()+'&type='+$("#type").val()+'&stime='+$("#stime").val()+'&pay_type='+$('#pay_type').val()+'&ids='+$('#ids').val()+'&this_id='+$('#this_id').val();
+			</notempty>
+		})
+	});
+	$('#export').click(function(){
+		location.href='__URL__/../user_money_float/index?id={$Think.get.id}&uid='+$("#uid").val()+'&etime='+$("#etime").val()+'&keyword='+$("#keyword").val()+'&type='+$("#type").val()+'&stime='+$("#stime").val()+'&pay_type='+$('#pay_type').val()+'&ids='+$('#ids').val()+'&this_id='+$('#this_id').val()+'&export=1';
+	});
+</script>
+</body>
+</html>
