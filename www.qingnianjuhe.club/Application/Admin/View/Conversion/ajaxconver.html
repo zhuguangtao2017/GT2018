@@ -1,0 +1,57 @@
+<form method="post" enctype="multipart/form-data" target="_blank" id="goods_list_form">
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <td style="width: 1px;" class="text-center">
+
+            </td>
+            <td class="text-right goodsid">
+                <a href="javascript:sort('id');">ID</a>
+            </td>
+            <td class="text-left">
+                <a href="javascript:sort('goods_name');">商品名称</a>
+            </td>
+            <td class="text-left">
+                <a href="javascript:sort('user_name');">收货人</a>
+            </td>
+            <td class="text-left">
+                <a href="javascript:sort('user_address');">地址</a>
+            </td>
+            <td class="text-left">
+                <a href="javascript:sort('user_mobile');">手机号</a>
+            </td>
+            <td class="text-left">
+                <a href="javascript:sort('integral');">所用积分</a>
+            </td>
+            <td class="text-left">
+                <a href="javascript:void(0);">兑换时间</a>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="list" id="list">
+            <tr>
+                <td class="text-center">
+                    <input type="checkbox" name="goods_id[]" value="{$list.goods_id}"/>
+                </td>
+                <td class="text-right">{$list.id}</td>
+                <td class="text-left">{$list.goods_name|getSubstr=0,33}</td>
+                <td class="text-left">{$list.user_name}</td>
+                <td class="text-left">{$list.user_address}</td>
+                <td class="text-left">{$list.user_mobile}</td>
+                <td class="text-left">{$list.integral}</td>
+                <td class="text-left">{$list.create_time|date="Y-m-d H:i:s",###}</td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+</div>
+</form>
+<div class="col-sm-9 text-right">{$page}</div>
+<script type="text/javascript">
+    $(".pagination  a").click(function(){
+        cur_page = $(this).data('p');
+        ajax_get_table('search-form2',cur_page);
+    });
+</script>

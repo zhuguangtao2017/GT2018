@@ -1,0 +1,164 @@
+<include file="Public/min-header"/>
+<style type="text/css">
+	select.form-control{display: initial;float: left;}	
+	 .ajax_bradnlist{height:318px; overflow:auto}	
+     .ajax_bradnlist ul{clear:both;padding-top: 10px }
+	 .ajax_bradnlist ul li{ float: left; display:inline-flex; display:-moz-inline-flex; display:-webkit-inline-box; width:20%; padding:6px 0; }
+	 .table-bordered th:first-child{ width:8%}
+	 .table-bordered tbody tr td{ vertical-align:middle}
+	 .form-control{ resize:vertical}
+</style>
+<!--以下是在线编辑器 代码 -->
+<script type="text/javascript">
+    /*
+   * 在线编辑器相 关配置 js 
+   *  参考 地址 http://fex.baidu.com/ueditor/
+   */
+    window.UEDITOR_Admin_URL = "__ROOT__/Public/plugins/Ueditor/";
+    var URL_upload = "{$URL_upload}";
+    var URL_fileUp = "{$URL_fileUp}";
+    var URL_scrawlUp = "{$URL_scrawlUp}";
+    var URL_getRemoteImage = "{$URL_getRemoteImage}";
+    var URL_imageManager = "{$URL_imageManager}";
+    var URL_imageUp = "{$URL_imageUp}";
+    var URL_getMovie = "{$URL_getMovie}";
+    var URL_home = "{$URL_home}";
+</script>
+<script type="text/javascript" charset="utf-8" src="__ROOT__/Public/plugins/Ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__ROOT__/Public/plugins/Ueditor/ueditor.all.min.js"> </script>
+ <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/plugins/Ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">  
+  
+    var editor;
+    $(function () {
+        //具体参数配置在  editor_config.js  中
+        var options = {
+            zIndex: 999,
+            initialFrameWidth: "95%", //初化宽度
+            initialFrameHeight: 400, //初化高度
+            focus: false, //初始化时，是否让编辑器获得焦点true或false
+            maximumWords: 99999, removeFormatAttributes: 'class,style,lang,width,height,align,hspace,valign'
+            , //允许的最大字符数 'fullscreen',
+            pasteplain:false, //是否默认为纯文本粘贴。false为不使用纯文本粘贴，true为使用纯文本粘贴
+            autoHeightEnabled: true
+         /*   autotypeset: {
+                mergeEmptyline: true,        //合并空行
+                removeClass: true,           //去掉冗余的class
+                removeEmptyline: false,      //去掉空行
+                textAlign: "left",           //段落的排版方式，可以是 left,right,center,justify 去掉这个属性表示不执行排版
+                imageBlockLine: 'center',    //图片的浮动方式，独占一行剧中,左右浮动，默认: center,left,right,none 去掉这个属性表示不执行排版
+                pasteFilter: false,          //根据规则过滤没事粘贴进来的内容
+                clearFontSize: false,        //去掉所有的内嵌字号，使用编辑器默认的字号
+                clearFontFamily: false,      //去掉所有的内嵌字体，使用编辑器默认的字体
+                removeEmptyNode: false,      //去掉空节点
+                                             //可以去掉的标签
+                removeTagNames: {"font": 1},
+                indent: false,               // 行首缩进
+                indentValue: '0em'           //行首缩进的大小
+            }*/,
+          toolbars: [
+                   ['fullscreen', 'source', '|', 'undo', 'redo',
+                       '|', 'bold', 'italic', 'underline', 'fontborder',
+                       'strikethrough', 'superscript', 'subscript',
+                       'removeformat', 'formatmatch', 'autotypeset',
+                       'blockquote', 'pasteplain', '|', 'forecolor',
+                       'backcolor', 'insertorderedlist',
+                       'insertunorderedlist', 'selectall', 'cleardoc', '|',
+                       'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+                       'customstyle', 'paragraph', 'fontfamily', 'fontsize',
+                       '|', 'directionalityltr', 'directionalityrtl',
+                       'indent', '|', 'justifyleft', 'justifycenter',
+                       'justifyright', 'justifyjustify', '|', 'touppercase',
+                       'tolowercase', '|', 'link', 'unlink', 'anchor', '|',
+                       'imagenone', 'imageleft', 'imageright', 'imagecenter',
+                       '|', 'insertimage', 'emotion', 'insertvideo',
+                       'attachment', 'map', 'gmap', 'insertframe',
+                       'insertcode', 'webapp', 'pagebreak', 'template',
+                       'background', '|', 'horizontal', 'date', 'time',
+                       'spechars', 'wordimage', '|',
+                       'inserttable', 'deletetable',
+                       'insertparagraphbeforetable', 'insertrow', 'deleterow',
+                       'insertcol', 'deletecol', 'mergecells', 'mergeright',
+                       'mergedown', 'splittocells', 'splittorows',
+                       'splittocols', '|', 'print', 'preview', 'searchreplace']
+               ]
+        };
+        editor = new UE.ui.Editor(options);
+        editor.render("goods_content");  //  指定 textarea 的  id 为 goods_content
+
+    }); 
+</script>
+<!--以上是在线编辑器 代码  end-->
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+		<section class="content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">增加模块</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <form action="{:U('Goods/module')}" method="post" class="form-horizontal" id="category_form">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <input type="hidden" name="module_id" value="{$info.module_id}">
+                                <label class="control-label col-sm-2">分类名称</label>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="模块名称" class="form-control large inp" name="module_name" value="{$info.module_name}">
+                                    <span class="help-inline" style="color:#F00; display:none;" id="err_module_name"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">模块封面图</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" style="width:350px;" name="module_img" id="module_img" value="{$info.module_img}" ><input type="button" class="btn btn-default" onClick="GetUploadify(1,'module_img','module','')"  value="上传图片"/><span style="color: red;"> 图片规格(165 * 120)</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">模块长条图</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" style="width:350px;" name="module_nimg" id="module_nimg" value="{$info.module_nimg}" ><input type="button" class="btn btn-default" onClick="GetUploadify(1,'module_nimg','module','')"  value="上传图片"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">模块长条图</label>
+                                <div class="col-sm-6">
+                                    <textarea class="span12 ckeditor" id="goods_content" name="content" title="">
+                                    {$info.content}
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                        	<button type="reset" class="btn btn-primary pull-left"><i class="icon-ok"></i>重填  </button>
+                            <button type="button" onclick="ajax_submit_form('category_form','{:U('Goods/addmodule')}');" class="btn btn-primary pull-right"><i class="icon-ok"></i>提交  </button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>
+<script>  
+    
+/** 以下是编辑时默认选中某个商品分类*/
+$(document).ready(function(){
+// 将品牌滚动条里面的 对应分类移动到 最上面
+//javascript:document.getElementById('category_id_3').scrollIntoView();
+var typeScroll = 0;
+function spec_scroll(o){
+	var id = $(o).val();	
+	if(!$('#type_id_'+id).is('h5')){
+		return false;
+	} 	 
+	$('#ajax_brandList').scrollTop(-typeScroll);
+	var sp_top = $('#type_id_'+id).offset().top; // 标题自身往上的 top
+	var div_top = $('#ajax_brandList').offset().top; // div 自身往上的top
+	$('#ajax_brandList').scrollTop(sp_top-div_top); // div 移动
+	typeScroll = sp_top-div_top;
+} 
+</script>
+   
+</body>
+</html>

@@ -1,0 +1,95 @@
+<include file="Public/min-header"/>
+<div class="wrapper">
+  <include file="Public/breadcrumb"/>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-list"></i> 库存不足商品列表</h3>
+        </div>
+        <div class="panel-body">    
+        <div class="navbar navbar-default">                    
+
+          </div>
+                        
+          <div id="ajax_return"> 
+                 
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th class="sorting text-left">商品ID</th>
+                                <th class="sorting text-left">商品规格</th>
+                                <th class="sorting text-left">商品名称</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <volist name="brandList" id="list">
+                                <tr>
+                                    <td class="text-right">{$list.goods_id}</td>
+                                    <td class="text-left">{$list.key_name}</td>
+                                    <td class="text-center">{$list.goods_name}</td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row --> 
+  </section>
+  <!-- /.content --> 
+</div>
+<!-- /.content-wrapper --> 
+ <script>
+ // 删除操作
+function del(id)
+{
+    if(!confirm('确定要删除吗?'))
+        return false;       
+        $.ajax({
+            url:"/index.php?m=Admin&c=goods&a=delBrand&id="+id,
+            success: function(v){   
+                            var v =  eval('('+v+')');                                 
+                            if(v.hasOwnProperty('status') && (v.status == 1))
+                               location.href='{:U('Admin/goods/brandList')}';
+                            else                                
+                                layer.msg(v.msg, {icon: 2,time: 1000}); //alert(v.msg);
+            }
+        }); 
+     return false;
+}
+ 
+
+//修改指定表的指定字段值
+function changeBrandField(field,id,obj)
+{
+ 
+     var isshow = $(obj).data('isshow');
+     if(isshow == 1)
+     {
+         $(obj).data('isshow','0');    
+         var value = 0;
+         $(obj).attr('src','__PUBLIC__/images/cancel.png');
+         
+     }else{
+         $(obj).data('isshow','1');
+         var value = 1;
+         $(obj).attr('src','__PUBLIC__/images/yes.png');
+     }    
+     
+     $.ajax({
+             url:'/index.php?m=Admin&c=goods&a=changeBrandField&field='+field+'&id='+id+'&value='+value,            
+             success: function(data){                                                                                         
+                     //  
+             }
+     });        
+     
+}
+ </script>
+</body>
+</html>

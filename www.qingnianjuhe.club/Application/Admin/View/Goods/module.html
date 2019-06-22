@@ -1,0 +1,109 @@
+<include file="Public/min-header"/>
+<div class="wrapper">
+  <include file="Public/breadcrumb"/>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-list"></i> 模块列表</h3>
+        </div>
+        <div class="panel-body">    
+        <div class="navbar navbar-default">
+            <p></p>
+            <div class="col-md-12">
+                <a href="{:U('Goods/addmodule')}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i>新增分类</a>
+            </div>
+          </div>
+                        
+          <div id="ajax_return">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>模块表ID</th>
+                                <th>模块名称</th>
+                                <th>模块封面图片</th>
+                                <th>模块长条图片</th>
+                                <th>添加时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <volist name="list" id="list">
+                                <tr>
+                                    <td>{$list.module_id}</td>
+                                    <td>{$list.module_name}</td>
+                                    <td><img src="{$list.module_img}" width="80px"></td>
+                                    <td><img src="{$list.module_nimg}" width="80px"></td>
+                                    <td>{$list.create_time|date="Y-m-d H:i:s",###}</td>
+                                    <td><a class="btn btn-primary" href="{:U('goods/addmodule',array('id'=>$list['module_id']))}"><i class="fa fa-pencil"></i></a>
+                                        <a class="btn btn-danger" onclick="del(this)" data-id="{$list['module_id']}"><i class="fa fa-trash-o"></i></a></td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row --> 
+  </section>
+  <!-- /.content --> 
+</div>
+<!-- /.content-wrapper --> 
+ <script>
+ // 删除操作
+function del(obj)
+{
+    var id = $(obj).attr('data-id');
+    if(!confirm('确定要删除吗?'))
+        return false;
+        $.ajax({
+            url:"/index.php?m=Admin&c=goods&a=delmodule&id="+id,
+            success: function(v){
+               /* console.log(v);
+                return false;*/
+                            var v =  eval('('+v+')');                                 
+                            if(v.hasOwnProperty('status') && (v.status == 1)){
+                                layer.msg(v.msg,{icon: 1,time: 2000});
+                                location.href='{:U('Admin/goods/module')}';
+                            }
+                            else                                
+                                layer.msg(v.msg, {icon: 2,time: 1000}); //alert(v.msg);
+            }
+        });
+}
+ 
+
+//修改指定表的指定字段值
+function changeBrandField(field,id,obj)
+{
+ 
+     var isshow = $(obj).data('isshow');
+     if(isshow == 1)
+     {
+         $(obj).data('isshow','0');    
+         var value = 0;
+         $(obj).attr('src','__PUBLIC__/images/cancel.png');
+         
+     }else{
+         $(obj).data('isshow','1');
+         var value = 1;
+         $(obj).attr('src','__PUBLIC__/images/yes.png');
+     }    
+     
+     $.ajax({
+             url:'/index.php?m=Admin&c=goods&a=changeBrandField&field='+field+'&id='+id+'&value='+value,            
+             success: function(data){                                                                                         
+                     //  
+             }
+     });        
+     
+}
+ </script>
+</body>
+</html>

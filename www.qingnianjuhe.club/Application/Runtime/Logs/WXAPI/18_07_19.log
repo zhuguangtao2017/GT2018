@@ -1,0 +1,302 @@
+[ 2018-07-19T12:20:09+08:00 ] 106.121.17.203 //index.php/WXAPI/user/getCode?code=081io6cX0PZrx22zo5fX0CiYbX0io6cA&encryptedData=C5RPGOaUyggwnHJNlI3j2FBJc%2BxJ9IALDKseBQc6IZyZq3pJLHBmilazYJSJDm5BnGfDfitHbA7SmYvX7zR1tN4sRColPbp10mWyiqkuqMMYpJiZkl%2BJ6t%2FERFRPyzkGW2UFvaIa32YROCe6wn3%2F5%2F0c3auLDx%2FZ0iNumbEILNdssJYmFKtX%2BI5%2Bpgaalolk9Ly0vEKsQ5c44qM2G587Y%2BrvxChJygxjFGZLpyox9KOZdTljN%2FMzhWzGOxypf4mcpTnzxHltcEOsR4NGwj8Gdp5b6uXXEoFVbAlxcdfFqPCGjW3%2BewEvxpm8%2F8ebONGDdrJE%2FTMh4yG7%2FL5wy5%2BkdIwrYnqroJOv1ZScADbGza6DgxTw6exogbOSIaXpbeqQM9RedEGieuzPrTKTi%2FBx6zDADWQcUXOeEoZ6Kl4A9rRR8qgPBbT%2FWWsx2zlX40te5Qbf1ksBFON2zwhswZgTFcBbMjj5IGroNDoNHev1nMs%3D&iv=eYGPIuW5hGMEcBcm6ZrwSQ%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000154s ]
+
+[ 2018-07-19T12:20:09+08:00 ] 106.121.17.203 //index.php/WXAPI/user/addUser?openid=o6MfD5O-om4LrhjMVxlTq7Ehx8-U&head_pic=https%3A%2F%2Fwx.qlogo.cn%2Fmmopen%2Fvi_32%2FQ0j4TwGTfTIK5TvjicrqLs5Y1ExVxwu6cmo3SSUU1aux69XiajIiaepjbFicM8rswzmCPmCPibuArTFaDPrQ7TzN6PA%2F132&nickname=D%EF%BF%A3%20%EF%BF%A3)%CF%83&first_leader=undefined&c_id=undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000111s ]
+
+[ 2018-07-19T12:20:10+08:00 ] 106.121.17.203 /index.php/WXAPI/Index/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000115s ]
+NOTIC: [2048] Declaration of WXAPI\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /home/www/htdocs/Application/WXAPI/Controller/IndexController.class.php 第 7 行.
+
+[ 2018-07-19T12:20:10+08:00 ] 106.121.17.203 /index.php/WXAPI/Index/getModule
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000113s ]
+NOTIC: [2048] Declaration of WXAPI\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /home/www/htdocs/Application/WXAPI/Controller/IndexController.class.php 第 7 行.
+
+[ 2018-07-19T16:36:13+08:00 ] 111.201.229.47 //index.php/WXAPI/user/getCode?code=081jf9Pa1FYrav0110Qa1Sk1Pa1jf9P9&encryptedData=YmPbByW6mNgGbxzvQXo6JBTOH7OTerPzXucIu8qod2tdpOGY3BKzbuRJc2kyFWIAMeeljk60NSvw97Iq1W70edmjPxC4ljxDjS7OFvv4sywM0APq3IY3VKviMsnFPydfp9AwtFoRhYiwRIBzhj%2F7KK6Dvlb8ZLEncq2lfLQPhOrvkaaeIxiz9xY1jLMMcaBOwYja%2FgiozkwSR5epU9vUZF%2B7YpfRZy6Ip1FERmWmZqB03eIF7a%2B18v0S%2FOmJbV2jtJmOIUtyiZYfEont5zxF2DwA9HoqfSc3uCOHy0esHtG77udUPjMtSXEGiJU9rjtmo6wvteCHkzbWj1UynxyKj1%2Bo%2FoQS3hrNXtBcGFAiLcVD8Ckb%2Ff8BcSV1FMXHLEJXShlYaprzfREc9%2B1TDsoiPIQoT6Ar%2BUafsYdx7HFXjY%2BZ5DWBTALN2i5KlVX6uP298JdGpNYQj8Mi53eKzG%2B0DQ%3D%3D&iv=nv5ym09aWO5zrrY7T5fsxg%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000098s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000140s ]
+
+[ 2018-07-19T16:36:13+08:00 ] 111.201.229.47 //index.php/WXAPI/user/addUser?openid=o6MfD5KnT-_WCyziqFXqUKjmmIRg&head_pic=https%3A%2F%2Fwx.qlogo.cn%2Fmmopen%2Fvi_32%2FQ0j4TwGTfTIXyDpriaAUQqT3Dcj4tIuyJnsHjh7kiaNMjHWt7TJ6ZjXLTKaWicfIry4JSy0xH7KCVFk9Ym0p3lcLg%2F132&nickname=panpan&first_leader=undefined&c_id=undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000114s ]
+
+[ 2018-07-19T16:36:14+08:00 ] 111.201.229.47 /index.php/WXAPI/Index/getModule
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000113s ]
+NOTIC: [2048] Declaration of WXAPI\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /home/www/htdocs/Application/WXAPI/Controller/IndexController.class.php 第 7 行.
+
+[ 2018-07-19T16:36:14+08:00 ] 111.201.229.47 /index.php/WXAPI/Index/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000110s ]
+NOTIC: [2048] Declaration of WXAPI\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /home/www/htdocs/Application/WXAPI/Controller/IndexController.class.php 第 7 行.
+
+[ 2018-07-19T17:58:06+08:00 ] 106.121.17.203 //index.php/WXAPI/user/getCode?code=071lr0fk2qq7hF0fKPek2vqkfk2lr0fi&encryptedData=KG0TM6weFVKu84DqhacckpECLOFbYYXvXNqffj6y4qaEXeqMhUWhzqwHjCJ2mQ4PC2CCO47DJZqCJl3z%2Fi9WwtW%2FZZGJFUQEQ9eCqPW1ExDRv1ozl%2FU0dvBEyQPXXWBhuIxwIe5ovQkK9zst5q45VYAq5y6tzYe5VZXQ8e63uASNQ1phTrKIBsPdgFRrqVL3iEMXJgZVm3M7HkOPrq92irYRatiwlVeQ23Y3zXvjKqNCS2ENJiF79tqMDkr%2BqNEM2R8XS9gMKGOTdAqNZ6H6vHPajeGCp%2FaqcYop6fIGH6MARYhQqBXuyN3%2F2y3%2B%2FJIA87QXh2v9YnHqDppeE24wp5zICd1SsDOTM6MSR3R%2FXTzLyqkulcWbC3KvmtkoALzzys1HWQ6bGZoRL9ikzOEcz56kvMDBJVX7fI0EC0hXjqvL7FEqql9Uwo3qDqOBT9MrigDwbtqdyUOO6t6cw8AJ%2F77oTYD6JjezZaDwLQT8WLc%3D&iv=n38210%2FM%2FEX%2F15D8WdFR0g%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000083s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000120s ]
+
+[ 2018-07-19T17:58:06+08:00 ] 106.121.17.203 //index.php/WXAPI/user/addUser?openid=o6MfD5O-om4LrhjMVxlTq7Ehx8-U&head_pic=https%3A%2F%2Fwx.qlogo.cn%2Fmmopen%2Fvi_32%2FQ0j4TwGTfTIK5TvjicrqLs5Y1ExVxwu6cmo3SSUU1aux69XiajIiaepjbFicM8rswzmCPmCPibuArTFaDPrQ7TzN6PA%2F132&nickname=D%EF%BF%A3%20%EF%BF%A3)%CF%83&first_leader=undefined&c_id=undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000112s ]
+
+[ 2018-07-19T17:58:06+08:00 ] 106.121.17.203 /index.php/WXAPI/Index/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000100s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000128s ]
+NOTIC: [2048] Declaration of WXAPI\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /home/www/htdocs/Application/WXAPI/Controller/IndexController.class.php 第 7 行.
+
+[ 2018-07-19T17:58:06+08:00 ] 106.121.17.203 /index.php/WXAPI/Index/getModule
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000112s ]
+NOTIC: [2048] Declaration of WXAPI\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /home/www/htdocs/Application/WXAPI/Controller/IndexController.class.php 第 7 行.
+
+[ 2018-07-19T18:15:59+08:00 ] 106.121.17.203 /index.php/WXAPI/user/getCode?code=061tRzIi2BKo9I0sd9Ki2mMDIi2tRzI2&encryptedData=lLUzOFvoArLMQKXFc%2BMB222GpldpSpxVHSsh3eQdnYC2PDUirh7vMix0Ob51sMq3XDAt1q8E3my1W78oeZxCQBqT07Y05b8LoE4sL1Yu1ON%2F%2B6nKhAAcKUQ84bVjFDmgZzcOLROG8tsNhltCrAIX87ixNytW%2F5vAgzmE3EapEj5Nx9E84ZOHz%2FEPAuhF5pSRJlHsAGcc37jLwXkML97tglNpbfM6F34O9axHxh2mdVJD9j7R1p4TzK2Kv9t7lQAObGZXUqC7QtDzaKv8LZPutZ%2BlXzjojc9Cnc0r5X0CZyuEjD%2FWmc51LkPgy9hjpHMUvCaOUANPhZzUUzT9DL0ERxXbc9ZccgvinlSg3m1scwzZ%2F%2Bo2F06yn0SwsPZRmpsGFuDkn98Td6RsuCgcAXkJcAVEcDeabBGL9Uqooma9Dmxo7mshtLiA5B%2FNXratC3%2BfIzDTUjotwnQjXHaFdAtFEtGGNHHW2sA6s8sKNEUX5Lo%3D&iv=Tbi48RHbtKMcS4tvkaSSpg%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: session_key /home/www/htdocs/Application/WXAPI/Controller/UserController.class.php 第 1330 行.
+
+[ 2018-07-19T18:20:48+08:00 ] 106.121.17.203 /index.php/WXAPI/user/getCode?code=071J9zI310kG3O1tsxK31QwsI31J9zIT&encryptedData=9EnYEWD4KBypwuCdaUFvNhDQNm3xWHvYwwJlVolQtI%2F5w30AiHE%2F5VOc1UubIVtS0QSIVwI5qbybXYaBsmwDoTx34tmVAXYPLaqKov4ocixOnPGwKMt68MtguC2qzw4F9kP7AD5df0Ql799qmG1UAWUkP%2FfgAezQ6%2B4VmcILuEvC9GPoZ0Jy4tdUy0mdl1mnly7ePA1PLwJ5RNc8lcUBFFCaANJYhRVp%2FuWGb1OkbnqiPTpbh5nJ4LXh1HntUpZMDrexSfbRMaaJSUsbrshOgp36ioES8CWvRkCBxOMn2eWD6T91Naf1%2B%2F2br9eB3B%2BtoZEuzDcWoOJnfyUt4jPZ9BeBtqyAybKPRZUkIBVOU2ESL3srU%2Fy5tBNJ1cNlGij45XHj%2FVCD%2FHE2xSlmqdxwSanD7NRmMk6sWk0DQdauAb9seKba%2F1isBm9sPnNlvOkwOm9QY4Ajq%2FTHhHXcu122g0ykPCeunwsp7s8pBAQFG%2FE%3D&iv=dNv%2B2E0KC%2Bsw1PP%2F40Wtdg%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000112s ]
+NOTIC: [8] Undefined index: session_key /home/www/htdocs/Application/WXAPI/Controller/UserController.class.php 第 1330 行.
+
+[ 2018-07-19T18:38:08+08:00 ] 106.121.17.203 /index.php/WXAPI/user/getCode?code=021YTaSe05imYz1hFpSe0PF0Se0YTaSm&encryptedData=0NGNDBFDJNoukQ5FcK1U7OkLI7jncM2tT0FHU3U3rz6uXCx%2FYO9JjSgZhN0xm7o0xM4Rv8xFCMvE38%2FZErAoT91po%2FUYM3l9WXRlLVz91IiDLnxnMaBHb5CDn%2BEfmXw1eByY1FYKBSF7y%2F0cHL%2BOEVdfH12e2ORXQFt89QYRmqnwLVuDbriNl0v%2FQ4uqqZdD%2FEnD35fYbnFwmKb7b6l5yRKgVyHlTUGyIG6B%2BLpWBbrt%2BubuIWb29S2wrkFkh8PZPL4qNxwCJRFpDDHpsdtxsiDCJiMY%2Fih7dP%2F81Aj0%2B1UE0iSMAg7HBa9NLoh4jvRemTpDrLNvzQZ7SYU3pUcXbxkvrXDvlybkwgmLlcbPkllBPG6biFZFUWOM8MoF35yDxRP5rKSevmii%2FptIIAvF48wK0TmffsyYDtf1NkUZdegBed04wKnRDFEbMFStmc4N%2BMRVbbZoNQhHThzM3z0sqDbGRy29xPfyxoTtT8J1SU0%3D&iv=idVI1a%2BF3slUKXn2vuGP%2Bg%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000093s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000140s ]
+NOTIC: [8] Undefined index: session_key /home/www/htdocs/Application/WXAPI/Controller/UserController.class.php 第 1330 行.
+
+[ 2018-07-19T18:39:12+08:00 ] 106.121.17.203 /index.php/WXAPI/user/getCode?code=021w1TTr0LLZVe1ai6Tr0VELTr0w1TT5&encryptedData=3ShR8BNHGnbP%2FlANrGJ5Xqo5VeII8rn6k7da0NVGvQn%2FOM%2BlSKeuTFGWsS%2BFjWgJrHRjoc8eIMNMenNTo3osCscitn71C8LpJFs4PGLawAFSQYNi91lCNh7bzQ2TtLxhzdxEX6DwlYTUaoqwK9Cy7nDlXrJUgXgVqxX05LEqZRqCZKoYlPDy8CnyQydkRxU%2Fuwbp9aTK7%2FHL6epfWebJ6giqXNOfe78Aya%2FrBKavvQgR5Kwz%2FI1mPVBztweGo%2BidlzJIcC9lj9TLXXBKkcsz9dGOhfiEqJcaj%2BpYcN5rSAmYQJ7dTH5N%2FFNg2rbpOZz8n2ls%2BEiRd2ChmwJCXipvZoHFJHhMizGWoEjPTqwvRBaxuSOpI%2BED1odtJyycgrBbpe8sKrrEf8rRL%2BL3mswBGLptRLBfrGQHokB9o9T9nD8Vwxj1Lnhd4c0Vi4sjTQ6Mfh%2FFH0YY6vNBYLwN%2BjqJw8wEqsL6PbxEcv51chWb9Qs%3D&iv=y82sVmaGqlVzBAAPPKz%2FxQ%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: session_key /home/www/htdocs/Application/WXAPI/Controller/UserController.class.php 第 1330 行.
+
+[ 2018-07-19T18:39:47+08:00 ] 106.121.17.203 /index.php/WXAPI/user/getCode?code=071MINWJ1KK7Q40Z6JWJ1DOYWJ1MINWx&encryptedData=BP8VWykzjSDistqV3CSwCziKSZGkTMIf7LA9fDpmg1Jh8dpZ9czuCryfteCQF9YvAtx20Ks2ukNW7Yz1mz4gY2N6SibdM%2Fi%2FQ%2FlO9njLB%2FAPqA5a4wSMadjkdjVk6nEp%2F2HgQt6asdX3Cquxj3cETz4pEIaCzF%2Fnsisq7ZrtdO7gljF5dB0CNzlMexwHMgrSSo090LdCo9Zl3Nz9dUar8dH8o6Jer0l%2F%2F9AfgAilInMvqmthgwZpDyhq05r1v4gNvT7CWIG0lVs2EhyCvXJePe1Ip0UWDpIg5M9oatztm2LD1ItNZGtzdkYm73GBzWhM4HGHA3uKn0JPd3SsHysFqlO6%2BgNfrChXGyctjQEeXxNE2GzKfrFMuIvNKT6UNFPICk6A%2F%2B8DQdFSm61%2FaOVBCnIYnyP2GPVUHAsoEpd5IZ7dNYHvfQAcfJXVuE3HURyVW0MkE8VYb%2F6eafUUU6horBZ%2BUSvspWL7z4tfeZV7P6g%3D&iv=unOlTc3YBLoQw5LKoZLD7A%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000093s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000131s ]
+NOTIC: [8] Undefined index: session_key /home/www/htdocs/Application/WXAPI/Controller/UserController.class.php 第 1330 行.
+
+[ 2018-07-19T18:40:53+08:00 ] 106.121.17.203 /index.php/WXAPI/user/getCode?code=0713PvLl1tmB6l0lHqMl1RTkLl13PvLw&encryptedData=dgob59lCg2wPlwmODXvC7jG3zG4lzoifa%2Ftd%2BNEnRtXfJFpCQe32oN4r4CY6uZMOb%2FASjDV4lgVBESwHrN5wRRkcEfQi0Mf6bK%2F9IG1zEci4Pbt0e1WzqbyMiyu1%2BnkpnO1HO%2BwzREImQ9vg0itXcqwC%2FtRmI25GRXyw13k9tp2QkMHJDXSLZ3upTuZgLA09F1NPSOUVDxAk3SiwADOr7T4CmGo0exDmm2bdB1PcYGFonYaa2eSjWwpuFh7ilJL%2FxP%2BvGFxee%2ButZha9YjOtgUQGW83BvxQ2%2FsOymCYa9KLLyTcLhPxxFI9v2iVySJN2h1TrJg5RRTQyH8C2Xteidlu9Wb1KBNTdD2l9Y%2BbfAonsQK1P0piAE4nCF68FpNhEA77jyyNpVIjpk3fWykV74RyKKADLb1O%2Fjulb16MHZKkeBb5xxA9JeRoURd2sQ1w1KiED77eDv3YcsmAJZZVVqY%2Bmag27XnAtSFpe8zhWymI%3D&iv=zaAv%2BoDjSPMMDRoNKrD1DQ%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000098s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000183s ]
+NOTIC: [8] Undefined index: session_key /home/www/htdocs/Application/WXAPI/Controller/UserController.class.php 第 1330 行.
+
+[ 2018-07-19T18:41:29+08:00 ] 106.121.17.203 /index.php/WXAPI/user/getCode?code=021W6RqF0aQKok2gabnF04OrqF0W6RqK&encryptedData=QyErckSoyf%2Bt%2FDELxB9Z1L2kp6%2BURtSmupSHUM8X2TlANtN3OeOSUp9VADX9asmH4Qe1o9qnDJKwJW354QmuBguHVOjoXLtuTtSja%2FgkWHVBEKiEADEPFZo7WJCuIUPi44dzorvscWgBxL1VUzY%2BYtNAqgjAHXHFi5mvU25NESAeW9xYXjviV3MVWpEJoDe5sksk3X5lg%2F%2FSGY%2B76wBDAnHxxrfntAqjXIG1F3bzD%2FqePOmQZMVhHi%2FZRUZVrGQScUYC7Th9sT1LfO3WM7DFYvw4Hwn%2Fma80yxy0r9nGMWKHwhRP4Yxo66BJMl%2BmvLcfZLzfuTGUJY%2B69Ml9kasKoTpT9X3%2FMyQtYJ8NO9jlzKm7O498260t6oJZyfZ14sCUwBh%2BCmiPWKUYUdya4hjDr1sFItx%2BO5pyWInWed4P2El2YGikarNEru%2F6WDnuzj0LiiQGT7MNhpXapFfnnDGbIl3lFObpoi10pYEXeMJ11aU%3D&iv=JUX6sJg64MOJ5yBJcCJiTQ%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000074s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: session_key /home/www/htdocs/Application/WXAPI/Controller/UserController.class.php 第 1330 行.
+
+[ 2018-07-19T18:45:31+08:00 ] 106.121.17.203 /index.php/WXAPI/user/getCode?code=061lPevB13JFHe0bFIxB12KqvB1lPevH&encryptedData=XshOYXdOP5mmVkwo265ObRLTIljlg1zwHM0UVwhTak%2BIi1%2BQWV3qnCbELF0B2w6LWA77k5LaP8FoEAjICcAzixCsZCgS0CDhdinWn%2B3IzmYhLVIoyB0OIhHErAF98WfUg%2B68FQCv6gP7siKILVBtL7lzBvXm2iEE3Qg%2B8GqvC2SRvseya8mgg0LbPPuVCZV%2BHVsekM4uTiabYxsR5Trylx3TxaUtY66KhhgiVsc5ReRoQC%2FLEk0ZZUEnsdkRT5yW9r%2BVdEpMiyYfw97HhLDom8Fg8yVTyqU0IU%2BSya5f8qqTJhpqTgyXdjMPRGM6szPGx7vX07NWtu%2BZ94zFlV0Hf8VExr6NxCkTsFxKLV7yChNfixfwFuthTs3s1sLSKDLMt5%2Bcwo0szGveDmm5yjYKc4XTBk3BcfZi%2FH4WKye1REBD%2BKbV%2Bmo9b76C0%2BTLkGFn0%2BolkolrssbUoYTSsf82drYIzwoVgqXWFMCLtWlTuOQ%3D&iv=T5y%2FLvH01fB6kxrRLWzG0Q%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000133s ]
+NOTIC: [8] Undefined index: session_key /home/www/htdocs/Application/WXAPI/Controller/UserController.class.php 第 1330 行.
+
+[ 2018-07-19T18:56:45+08:00 ] 106.121.17.203 /index.php/WXAPI/user/getCode?code=0817Rlbm0rlpIk18o49m0N8abm07Rlbx&encryptedData=ZawXCqXOYsImJnr4ukc8f6tmn9rrM6a5R4cOVobh0Sopa%2Fb0ilZKR5IQe%2B1hg3kCLMrzfs%2BsoTY3VR5ufQsHa0xa94VX4ZcEoPzEWwkcrzaMUR%2Fqj4SSpzPgh6eXqgf5qbGLKTnN7sZwLmwcCbD8OLKccC4fmEEtd%2FztMdn7ed%2BjUhgmeVG7DUsAUJX%2BoP1%2FsOpJ7uwHHiUx%2FH8rx%2FzHdDck5korBDyeLVOedSvqM8ZQ3EZ0dGzem0GHyKn%2FxlV694SvebStq036DmyEqhGsI1lZHL8u%2F31j9%2Ba7GjO5HOvLF3jDW%2FI9iv9R8h4QpvOhv96SWR6JzErEeq2uZKbljokZkwQlEynKucF5sRJs4r%2FvB%2F3%2BMs9%2FFXMh7wrOqEJRVvKbddMvSrODmoGcdKkC6ZR1iPOtrELWOOSE0MgHkZpyM61PF7z6dHEMCK%2BQzzWLuKgHASqNzrtUFxNqokGtvVAYRayEbUC4%2Ftd2akGaYWI%3D&iv=AGx2hmZLb%2F5Kn6fp6dO4UA%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000123s ]
+NOTIC: [8] Undefined index: session_key /home/www/htdocs/Application/WXAPI/Controller/UserController.class.php 第 1330 行.
+
+[ 2018-07-19T18:59:13+08:00 ] 106.121.17.203 /index.php/WXAPI/user/getCode?code=061Xs4Ti2R9CKH0b98Ri20wQSi2Xs4Tw&encryptedData=bIEclCH2Z9a12G8sL4FA2NBZl7ABXdirhZrjFa04KU8F4xBPeTwW7E9Tsok7abS%2BSeZBbpUDdYumYFKc65a29bWeWjmLH7ZVSkPJzx1v9J2JkKz4ZzCQnA8k%2BjTRUjJSmjXp8bj96Tg6XSq%2BrE9QJ%2BrPD4XXkG1mYh%2FvcDbTEETcqcAoxCLwYtUo3HJn06m96NdheSu3WB80kQcak8olJR3dU4ylAKPsdn7TIef6MNSmrvgUKk%2FIA5bJ66XZbMCRJ5hYY8L2wyfwxEQCF%2BDZ68zRVGkC%2Ftr08xN8qpm73wwtIlN22gEw34slPwLgUrIGaE6lIP6suCdTIGWeHRm3VzPSNdeicySAH%2BQP57oc%2Bmiz%2Fs6EsxJ1GKAmbn%2BTOnx49FitgL%2BfX9ejt7XPR3uXivigpbq6NOon%2F1Y165oG5MZt%2FaLD0EjAFUl2MdWymcsDusOuJJDhb2CPphKISDIcOLf0qZDnoArZHlQB9TANW60%3D&iv=Qx8JZ0XjTJA0GzAf6foNZQ%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+NOTIC: [8] Constant APP_ID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 2 行.
+NOTIC: [8] Constant APP_SECRET already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 3 行.
+NOTIC: [8] Constant OPENID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 4 行.
+NOTIC: [8] Constant MCHID already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 5 行.
+NOTIC: [8] Constant Key already defined /home/www/htdocs/Application/WXAPI/Common/function.php 第 6 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000115s ]
+NOTIC: [8] Undefined index: session_key /home/www/htdocs/Application/WXAPI/Controller/UserController.class.php 第 1330 行.
+

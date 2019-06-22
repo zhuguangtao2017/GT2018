@@ -1,0 +1,94 @@
+<form method="post" enctype="multipart/form-data" target="_blank" id="goods_list_form">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <td style="width: 1px;" class="text-center">                
+                    
+                </td>                
+                <td class="text-right goodsid">
+                    <a href="javascript:sort('goods_id');">ID</a>
+                </td>
+                <td class="text-left">
+                    <a href="javascript:sort('goods_name');">商品名称</a>
+                </td>
+                <td class="text-left">
+                    <a href="">寄卖主</a>
+                </td>
+                <td class="text-left">
+                    <a href="">物流单号</a>
+                </td>
+                <td class="text-left">
+                    <a href="">回寄单号</a>
+                </td>
+                <td class="text-left">
+                    <a href="javascript:sort('shop_price');">价格</a>
+                </td>
+                <td class="text-left">
+                    <a href="javascript:void(0);">库存</a>
+                </td>
+                <td class="text-left">
+                    <a href="javascript:sort('is_on_sale');">上/下架</a>
+                </td>
+                <td class="text-left">
+                    <a href="javascript:sort('sellType');">审核状态</a>
+                </td>              
+                <td class="text-right">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <volist name="goodsList" id="list">
+                <tr>
+                    <td class="text-center">
+                       <input type="checkbox" name="goods_id[]" value="{$list.goods_id}"/>
+                    </td>
+                    <td class="text-right">{$list.goods_id}</td>
+                    <td class="text-left">{$list.goods_name|getSubstr=0,33}</td>
+                    <td class="text-left">{$list.nickname}</td>
+                     <td class="text-left">{$list.logistics}</td>
+                    <td class="text-left">{$list.logistics_admin}</td>
+                    <td class="text-left">{$list.shop_price}</td>
+                    <td class="text-left">{$list.store_count}</td>
+                    <td class="text-left">
+                        <if condition="$list[is_on_sale] eq 0  ">下架</if>
+                        <if condition="$list[is_on_sale] eq 1">上架</if>
+                    </td>
+                    <td class="text-left">
+                    <if condition="$list[selltype] eq 0">待审核</if>
+                    <if condition="$list[selltype] eq 1">待邮寄</if>
+                    <if condition="$list[selltype] eq 2">邮寄中</if>
+                    <if condition="$list[selltype] eq 3">已签收</if>
+                    <if condition="$list[selltype] eq 4">待验真</if>
+                    <if condition="$list[selltype] eq 5">已通过</if>
+                    <if condition="$list[selltype] eq 6">线下拒绝</if>
+                    <if condition="$list[selltype] eq 7">已取消</if>
+                        <if condition="$list[selltype] eq 8">
+                            线上拒绝
+                            <if condition="$list[logistics_admin] neq ''">(已回寄
+                                <if condition="$list[return_status] eq 1">|已签收<else/>|未签收</if>)
+                            <else/>(未回寄)</if>
+                        </if>
+                    </td>
+                    <td class="text-right">
+                        <a href="{:U('Admin/Goods/addEditGoods',array('id'=>$list['goods_id']))}">查看</a>&nbsp;
+                        <!--<br/>-->
+                        <!--<a id="delgoods" href="{:U('Admin/Goods/delGoods',array('id'=>$list['goods_id']))}">删除</a>&nbsp;-->
+                    </td>
+
+                </tr>
+            </volist>
+            </tbody>
+        </table>
+    </div>
+</form>
+<div class="col-sm-9 text-right">{$page}</div>
+<script>
+    // 点击分页触发的事件
+    $(".pagination  a").click(function(){
+        cur_page = $(this).data('p');
+        ajax_get_table('search-form2',cur_page);
+    });
+
+</script>
+<script>
+</script>

@@ -1,0 +1,263 @@
+[ 2018-10-24T11:43:23+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.001301s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.001335s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062410s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062467s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000818s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001527s ]
+
+[ 2018-10-24T11:43:32+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+NOTIC: [8] Undefined index: login F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+NOTIC: [2] file_get_contents(http://service.tp-shop.cn/index.php?m=Home&amp;c=Index&amp;a=user_push&amp;domain=www.qingnianjuhe.com&amp;last_domain=www.qingnianjuhe.com&amp;key_num=v1.0.0&amp;install_time=1494946460&amp;cpu=0001&amp;mac=0002&amp;serial_number=20170516105420KfPCm7): failed to open stream: HTTP request failed!  F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 56 行.
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.001249s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.001279s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012712s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012748s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.002108s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002901s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001215s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001266s ]
+
+[ 2018-10-24T11:43:32+08:00 ] 127.0.0.1 /index.php/Admin/Admin/vertify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001140s ]
+NOTIC: [8] Undefined index: vertify F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000827s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000878s ]
+
+[ 2018-10-24T11:43:41+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Admin&a=login&t=0.7465981852896746
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+NOTIC: [8] Undefined index: login F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+
+[ 2018-10-24T11:43:42+08:00 ] 127.0.0.1 /index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001682s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.001250s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.001295s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063768s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063805s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001774s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000671s ]
+
+[ 2018-10-24T11:43:42+08:00 ] 127.0.0.1 /index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+NOTIC: [8] Undefined index: welcome F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+NOTIC: [8] Undefined index: version F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Controller\IndexController.class.php 第 57 行.
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.001230s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.001292s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037530s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001725s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001051s ]
+
+[ 2018-10-24T11:43:43+08:00 ] 127.0.0.1 /index.php/Admin/System/login_task
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+NOTIC: [8] Undefined index: login_task F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+NOTIC: [2] Invalid argument supplied for foreach() F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Controller\SystemController.class.php 第 248 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000690s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+
+[ 2018-10-24T11:43:46+08:00 ] 127.0.0.1 /index.php/Admin/Ad/adList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.001317s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.001353s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: level F:\phpStudy\WWW\www.qingnianjuhe.club\ThinkPHP\Library\Think\Template\TagLib\Tpshop.class.php 第 155 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 124 行.
+NOTIC: [8] Use of undefined constant ad_id - assumed 'ad_id' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 152 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 153 行.
+NOTIC: [8] Use of undefined constant position_name - assumed 'position_name' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 153 行.
+NOTIC: [8] Undefined offset: 0 F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 153 行.
+NOTIC: [8] Use of undefined constant target - assumed 'target' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 158 行.
+NOTIC: [8] Use of undefined constant enabled - assumed 'enabled' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 161 行.
+NOTIC: [8] Use of undefined constant ad_id - assumed 'ad_id' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 152 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 153 行.
+NOTIC: [8] Use of undefined constant position_name - assumed 'position_name' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 153 行.
+NOTIC: [8] Undefined offset: 0 F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 153 行.
+NOTIC: [8] Use of undefined constant target - assumed 'target' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 158 行.
+NOTIC: [8] Use of undefined constant enabled - assumed 'enabled' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 161 行.
+NOTIC: [8] Use of undefined constant ad_id - assumed 'ad_id' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 152 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 153 行.
+NOTIC: [8] Use of undefined constant position_name - assumed 'position_name' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 153 行.
+NOTIC: [8] Undefined offset: 0 F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 153 行.
+NOTIC: [8] Use of undefined constant target - assumed 'target' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 158 行.
+NOTIC: [8] Use of undefined constant enabled - assumed 'enabled' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Runtime\Cache\Admin\9dcb80a295485a90dd49f9b2b975f801.php 第 161 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.071791s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071829s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.002467s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003314s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000677s ]
+
+[ 2018-10-24T11:43:49+08:00 ] 127.0.0.1 /index.php/Admin/Order/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.001037s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.001072s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010189s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010226s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000855s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000588s ]
+
+[ 2018-10-24T11:43:49+08:00 ] 127.0.0.1 /index.php/Admin/order/ajaxindex/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+NOTIC: [8] Undefined index: ajaxindex F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+NOTIC: [8] Use of undefined constant STORE_ID - assumed 'STORE_ID' F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Controller\OrderController.class.php 第 58 行.
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000733s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000767s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009447s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009485s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000551s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001035s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000623s ]
+
+[ 2018-10-24T11:43:52+08:00 ] 127.0.0.1 /index.php/Admin/Goods/module
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+NOTIC: [8] Undefined index: module F:\phpStudy\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000923s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000957s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016969s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001212s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001748s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000773s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000799s ]
+

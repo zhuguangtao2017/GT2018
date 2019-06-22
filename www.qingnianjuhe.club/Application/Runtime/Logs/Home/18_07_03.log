@@ -1,0 +1,27 @@
+[ 2018-07-03T19:19:59+08:00 ] 114.242.250.186 /index.php?m=Home&c=api&a=get_category&parent_id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000117s ]
+NOTIC: [8] Undefined variable: html /home/www/htdocs/Application/Home/Controller/ApiController.class.php 第 65 行.
+
+[ 2018-07-03T19:20:02+08:00 ] 114.242.250.186 /index.php?m=Home&c=api&a=get_category&parent_id=4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000112s ]
+NOTIC: [8] Undefined variable: html /home/www/htdocs/Application/Home/Controller/ApiController.class.php 第 65 行.
+
+[ 2018-07-03T19:42:02+08:00 ] 114.242.250.186 /index.php?m=Home&c=api&a=get_category&parent_id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000128s ]
+NOTIC: [8] Undefined variable: html /home/www/htdocs/Application/Home/Controller/ApiController.class.php 第 65 行.
+

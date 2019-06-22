@@ -1,0 +1,36 @@
+[ 2018-07-19T16:38:16+08:00 ] 45.77.9.19 /index.php?s=/home/article/view_recent/name/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000139s ]
+ERR: 非法操作:view_recent
+
+[ 2018-07-19T16:53:13+08:00 ] 45.77.9.19 /index.php?s=/home/article/view_recent/name/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000137s ]
+ERR: 非法操作:view_recent
+
+[ 2018-07-19T18:45:09+08:00 ] 103.255.179.9 /index.php?s=/home/article/view_recent/name/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000161s ]
+ERR: 非法操作:view_recent
+
+[ 2018-07-19T18:45:44+08:00 ] 103.255.179.9 /index.php?s=/home/article/view_recent/name/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000106s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000134s ]
+ERR: 非法操作:view_recent
+

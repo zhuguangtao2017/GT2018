@@ -1,0 +1,98 @@
+[ 2018-08-30T16:47:15+08:00 ] 140.205.108.16 /index.php?c=Admin&a=vertify&r=70&m=hello%0D%0Aworld%3A111
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+ERR: 无法加载模块:Hello
+world:111
+
+[ 2018-08-30T16:47:19+08:00 ] 140.205.108.84 /index.php?c=Admin&a=vertify&r=70&m=hello%0A%0Dworld
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+ERR: 无法加载模块:Hello
+world
+
+[ 2018-08-30T16:47:26+08:00 ] 140.205.108.7 /index.php?c=Admin&a=vertify&r=70&m=Admina%27
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+ERR: 无法加载模块:Admina'
+
+[ 2018-08-30T16:47:40+08:00 ] 140.205.201.9 /index.php?c=Admin&a=vertify&r=70&m=Admin'%22%3E%3Ciframe%20onload=alert()%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+ERR: 无法加载模块:Admin'">
+
+[ 2018-08-30T16:49:11+08:00 ] 140.205.201.10 /index.php?c=Admin&a=vertify&r=70&m=Admin'%22%3E%3Cimg%20src=x%20onerror=prompt()%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+ERR: 无法加载模块:Admin'">
+
+[ 2018-08-30T16:51:02+08:00 ] 140.205.201.15 /index.php?c=Admin&a=vertify&r=70&m=Admin'%22%3E%3Csvg%20onload=prompt()%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+ERR: 无法加载模块:Admin'">
+
+[ 2018-08-30T16:53:44+08:00 ] 140.205.201.9 /index.php?c=Admin&a=vertify&r=70&m=Admin',);confirm(1);('
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+ERR: 无法加载模块:Admin',);confirm(1);('
+
+[ 2018-08-30T16:55:48+08:00 ] 140.205.201.22 /index.php?c=Admin&a=vertify&r=70&m=Adminaaaaaa%7B%7Ba='constructor';b=%7B%7D;a.sub.call.call(b%5Ba%5D.getOwnPropertyDescriptor(b%5Ba%5D.getPrototypeOf(a.sub),a).value,0,'alert(heimdall)')()%7D%7Dbbbbbb
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+ERR: 无法加载模块:Adminaaaaaa{{a='constructor';b={};a.sub.call.call(b[a].getOwnPropertyDescriptor(b[a].getPrototypeOf(a.sub),a).value,0,'alert(heimdall)')()}}bbbbbb
+
+[ 2018-08-30T16:56:53+08:00 ] 140.205.108.93 /index.php?c=Admin&a=vertify&r=70&m=Admin%22%20onmouseover=%22window.onerror=alert;throw%20/xss/%22%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+ERR: 无法加载模块:Admin" onmouseover="window.onerror=alert;throw /xss/">
+
+[ 2018-08-30T16:56:58+08:00 ] 140.205.108.25 /index.php?c=Admin&a=vertify&r=70&m=Admin%27%20and%20heimdalldam%3D%20%274262106465452060995-m
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+ERR: 无法加载模块:Admin' and heimdalldam= '4262106465452060995-m
+
+[ 2018-08-30T16:57:02+08:00 ] 140.205.108.142 /index.php?c=Admin&a=vertify&r=70&m=Admin%22%20and%20heimdalldam%3D%20%224262106465452060995-m
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+ERR: 无法加载模块:Admin" and heimdalldam= "4262106465452060995-m
+
+[ 2018-08-30T16:57:06+08:00 ] 140.205.108.56 /index.php?c=Admin&a=vertify&r=70&m=Admin%20and%20heimdalldam%3D%274262106465452060995-m%27
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000065s ]
+ERR: 无法加载模块:Admin and heimdalldam='4262106465452060995-m'
+
+[ 2018-08-30T16:57:10+08:00 ] 140.205.108.149 /index.php?c=Admin&a=vertify&r=70&m=Admin%27%29%20and%20heimdalldam%3D%28%274262106465452060995-m
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+ERR: 无法加载模块:Admin') and heimdalldam=('4262106465452060995-m
+
+[ 2018-08-30T16:57:14+08:00 ] 140.205.108.149 /index.php?c=Admin&a=vertify&r=70&m=Admin%29%20and%20heimdalldam%3D%284262106465452060995-m
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+ERR: 无法加载模块:Admin) and heimdalldam=(4262106465452060995-m
+
+[ 2018-08-30T16:57:18+08:00 ] 140.205.80.75 /index.php?c=Admin&a=vertify&r=70&m=Admin%22%29%20and%20heimdalldam%3D%28%224262106465452060995-m
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+ERR: 无法加载模块:Admin") and heimdalldam=("4262106465452060995-m
+
+[ 2018-08-30T16:57:22+08:00 ] 140.205.108.164 /index.php?c=Admin&a=vertify&r=70&m=Admin%2Cif%28heimdalldam%3D%274262106465452060995-m%27%2C1%2C2%29
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+ERR: 无法加载模块:Admin,if(heimdalldam='4262106465452060995-m',1,2)
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+<body>
+<include file="Public/min-header"/>
+<div class="wrapper">
+    <include file="Public/breadcrumb"/>
+    <form action='<?php echo U("WXAPI/user/addImg")?>' enctype="multipart/form-data" method="post" >
+        <input type="text" name="name" />
+        <input type="file" id="file" name="file[]" multiple="multiple" />
+       <input type="button" class="getinfo" value="上传">
+        <input type="submit" name="上传">
+    </form>
+<script>
+    $(function () {
+       $(".getinfo").click(function () {
+           var fileObj = document.getElementById("file").files[0];
+           var formFile = new FormData();
+           formFile.append("goods_id", "287");
+         /*  formFile.append("cat_id1", "1");
+           formFile.append("goods_name", "满配补偿器M4+消音");
+           formFile.append("store_count", "50");
+           formFile.append("shop_price","998");
+           formFile.append("goods_remark", "M4指的是美国M4卡宾枪，英文The United States Carbine Caliber ，口径5.56mm NATO M4A1 (美国&北大西洋公约组织5.56mm口径M4A1卡宾枪)。");*/
+           formFile.append("file[]", fileObj); //加入文件对象
+           var data = formFile;
+           $.ajax({
+               url: '<?php echo U("WXAPI/index/toSimg")?>',
+               data: data,
+               type: "Post",
+               dataType: "json",
+               cache: false,//上传文件无需缓存
+               processData: false,//用于对data参数进行序列化处理 这里必须false
+               contentType: false, //必须
+               success: function (result) {
+                   console.log(result);
+               },error:function () {
+                   alert('网络出错');
+               }
+           })
+       })
+    })
+    
+       /* $.ajax({
+            type: "POST",
+            url:'<?php echo U("WXAPI/user/addUser")?>',
+            dataType:'json',
+            data:{'openid':'oB6j05c25godDF0SdtEnaVmEBa4ge','mobile':'15762967952','head_pic':'https://wx.qlogo.cn/mmopen/vi_32/aCu6JVdHiaLrRpJ6TxoNTVa92t2AQcXxLnWKpxDzCjH0e22JGJfgalHATxCFPZtyHtibrH4xYUglSLdlOE3mYI8g/0','nickname':'测试帐号','first_leader':'86'},
+            success: function (data) {
+                console.log(data);
+
+            },error:function(){
+                alert('网络出错');
+            }
+        });*/
+    
+</script>
+</body>
+</html>

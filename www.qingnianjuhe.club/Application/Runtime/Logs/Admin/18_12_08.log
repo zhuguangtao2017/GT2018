@@ -1,0 +1,263 @@
+[ 2018-12-08T11:25:33+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000000s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-08T11:25:34+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-12-08T11:26:14+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+ERR: SQLSTATE[HY000] [1049] Unknown database 'panchen'
+
+[ 2018-12-08T11:26:27+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: SQLSTATE[HY000] [1049] Unknown database 'show'
+
+[ 2018-12-08T11:26:31+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ty_config` [ RunTime:0.0488s ]
+SQL: SELECT * FROM `ty_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: login G:\phpStudy\PHPTutorial\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000977s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000977s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007812s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001954s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001954s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000976s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000976s ]
+
+[ 2018-12-08T11:26:31+08:00 ] 127.0.0.1 /index.php/Admin/Admin/vertify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ty_config` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `ty_config`  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: vertify G:\phpStudy\PHPTutorial\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-08T11:26:40+08:00 ] 127.0.0.1 /index.php?m=Admin&c=Admin&a=login&t=0.6222360241379885
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000977s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `ty_config` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `ty_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: login G:\phpStudy\PHPTutorial\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `ty_admin` [ RunTime:0.0342s ]
+SQL: SELECT * FROM `ty_admin` INNER JOIN ty_admin_role ON ty_admin.role_id=ty_admin_role.role_id  WHERE `user_name` = 'admin' AND `password` = '519475228fe35ad067744465c42a19b2' LIMIT 1   [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `ty_admin_log` [ RunTime:0.0156s ]
+SQL: SELECT `log_time` FROM `ty_admin_log` WHERE ( admin_id = 8 and log_info = '后台登录' ) ORDER BY log_id desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `ty_admin_log` (`log_time`,`admin_id`,`log_info`,`log_ip`,`log_url`,`log_type`) VALUES ('1544239600','8','后台登录','127.0.0.1','/index.php/Admin/Admin/login','0') [ RunTime:0.0000s ]
+
+[ 2018-12-08T11:26:41+08:00 ] 127.0.0.1 /index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `ty_config` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `ty_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ty_admin` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `ty_admin` WHERE ( admin_id=8 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ty_order` [ RunTime:0.0371s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_order` WHERE ( order_status=0 and (pay_status=1 or pay_code='cod') ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000977s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000977s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.002930s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003906s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000977s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000977s ]
+
+[ 2018-12-08T11:26:41+08:00 ] 127.0.0.1 /index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000977s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ty_config` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `ty_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: welcome G:\phpStudy\PHPTutorial\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+SQL: SELECT VERSION() as version [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: version G:\phpStudy\PHPTutorial\WWW\www.qingnianjuhe.club\Application\Admin\Controller\IndexController.class.php 第 57 行.
+SQL: SHOW COLUMNS FROM `ty_order` [ RunTime:0.0117s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_order` WHERE ( order_status=0 and (pay_status=1 or pay_code='cod') ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_order` WHERE ( add_time>1544153201 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ty_spec_goods_price` [ RunTime:0.0371s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_spec_goods_price` WHERE ( store_count<10 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ty_article` [ RunTime:0.0635s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_article` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ty_users` [ RunTime:0.0381s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_users` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_users` WHERE ( last_login>1544153201 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ty_goods` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `ty_goods` WHERE `goods_state` = 0  [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_users` WHERE ( reg_time>1544153201 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ty_comment` [ RunTime:0.0117s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_comment` WHERE ( is_show=0 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ty_store_apply` [ RunTime:0.0137s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_store_apply` WHERE ( apply_state=0 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ty_store_bind_class` [ RunTime:0.0449s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_store_bind_class` WHERE ( state=0 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ty_brand` [ RunTime:0.0420s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_brand` WHERE ( status=0 and store_id>0 ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000977s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000977s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008789s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008789s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001953s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002929s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000977s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000977s ]
+
+[ 2018-12-08T11:26:42+08:00 ] 127.0.0.1 /index.php/Admin/System/login_task
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000977s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ty_config` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `ty_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: login_task G:\phpStudy\PHPTutorial\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `ty_cart` [ RunTime:0.0293s ]
+SQL: DELETE FROM `ty_cart` WHERE ( user_id = 0 and  add_time < 1544236002 ) [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ty_order` [ RunTime:0.0107s ]
+SQL: SELECT `order_id` FROM `ty_order` WHERE ( order_status = 1 and shipping_status = 1 and (1544239602 - shipping_time) >  86400 )  [ RunTime:0.0010s ]
+NOTIC: [2] Invalid argument supplied for foreach() G:\phpStudy\PHPTutorial\WWW\www.qingnianjuhe.club\Application\Admin\Controller\SystemController.class.php 第 248 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-12-08T11:26:45+08:00 ] 127.0.0.1 /index.php/Admin/Order/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ty_config` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `ty_config`  [ RunTime:0.0000s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000976s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000976s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009766s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009766s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000977s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000977s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000976s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000976s ]
+
+[ 2018-12-08T11:26:45+08:00 ] 127.0.0.1 /index.php/Admin/order/ajaxindex/p/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `ty_config` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `ty_config`  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: ajaxindex G:\phpStudy\PHPTutorial\WWW\www.qingnianjuhe.club\Application\Admin\Common\function.php 第 70 行.
+SQL: SHOW COLUMNS FROM `ty_order` [ RunTime:0.0117s ]
+SQL: SHOW COLUMNS FROM `ty_order` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `ty_order`  [ RunTime:0.0000s ]
+NOTIC: [8] Use of undefined constant STORE_ID - assumed 'STORE_ID' G:\phpStudy\PHPTutorial\WWW\www.qingnianjuhe.club\Application\Admin\Controller\OrderController.class.php 第 57 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ty_order` WHERE `store_id` = 0 AND `pay_time` BETWEEN '1541606400' AND '1544284800' AND `order_status` = 0 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ty_order` WHERE `store_id` = 0 AND `pay_time` BETWEEN '1541606400' AND '1544284800' AND `order_status` = 0 ORDER BY order_id desc LIMIT 0,20   [ RunTime:0.0010s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000977s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000977s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008789s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009766s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000976s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

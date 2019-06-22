@@ -1,0 +1,18 @@
+[ 2018-06-08T15:32:24+08:00 ] 106.121.19.99 /index.php?m=Home&c=api&a=get_category&parent_id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000111s ]
+NOTIC: [8] Undefined variable: html /home/www/htdocs/Application/Home/Controller/ApiController.class.php 第 65 行.
+
+[ 2018-06-08T15:32:24+08:00 ] 106.121.19.99 /index.php?m=Home&c=api&a=get_category&parent_id=27
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000114s ]
+NOTIC: [8] Undefined variable: html /home/www/htdocs/Application/Home/Controller/ApiController.class.php 第 67 行.
+

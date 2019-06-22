@@ -1,0 +1,117 @@
+<include file="Public/min-header"/>
+<div class="wrapper">
+    <!-- Content Header (Page header) -->
+   <include file="Public/breadcrumb"/>
+    <section class="content">
+    <!-- Main content -->
+    <!--<div class="container-fluid">-->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-list"></i> 用户信息</h3>
+            </div>
+            <div class="panel-body">
+                <form action="" method="post" onsubmit="return checkUserUpdate(this);">
+                    <input type="hidden" name="is_distribut" value="0">
+                    <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                        <td class="col-sm-2">会员昵称:</td>
+                        <td ><input type="text" class="form-control" name="nickname" value="{$user.nickname}"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>用户积分:</td>
+                        <td>寄卖收益: {$user.total_amount} <span style="margin-left:100px;">分销收益：{$user.distribut_money}</span></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>性别:</td>
+                        <td id="order-status">
+                            <input name="sex" type="radio" value="0" <if condition="$user['sex'] eq 0">checked</if> >保密
+                            <input name="sex" type="radio" value="1" <if condition="$user['sex'] eq 1">checked</if> >男
+                            <input name="sex" type="radio" value="2" <if condition="$user['sex'] eq 2">checked</if> >女
+                        </td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>手机:</td>
+                        <td>
+                            <input type="text" class="form-control" name="mobile" value="{$user.mobile}">
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>冻结用户:</td>
+                        <td>
+                            <input name="is_lock" type="radio" value="1" <if condition="$user['is_lock'] eq 1">checked</if> >是
+                            <input name="is_lock" type="radio" value="0" <if condition="$user['is_lock'] eq 0">checked</if> >否
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>注册时间:</td>
+                        <td>
+                            {$user.reg_time|date='Y-m-d H:i',###}
+                        </td>
+                        <td></td>
+                    </tr>
+                        
+                   <tr>
+                        <td>是否允许成为分销商:</td>
+                        <td id="order-status">
+                            <input name="distatus" type="radio" value="2" <if condition="$user['distatus'] eq 2">checked</if> >是
+                            <input name="distatus" type="radio" value="3" <if condition="$user['distatus'] eq 3">checked</if> >否
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn btn-info">
+                                <i class="ace-icon fa fa-check bigger-110"></i> 保存
+                            </button>
+                            <a href="javascript:history.go(-1)" data-toggle="tooltip" title="" class="btn btn-default pull-right" data-original-title="返回"><i class="fa fa-reply"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </form>
+
+            </div>
+        </div>
+ 	  </div> 
+    </div>    <!-- /.content -->
+   </section>
+</div>
+<script>
+    // function checkUserUpdate(){
+    //     var email = $('input[name="email"]').val();
+    //     var mobile = $('input[name="mobile"]').val();
+    //     var password = $('input[name="password"]').val();
+    //     var password2 = $('input[name="password2"]').val();
+
+    //     var error ='';
+    //     if(password != password2){
+    //         error += "两次密码不一样\n";
+    //     }
+
+    //     if(!checkEmail(email)){
+    //         error += "邮箱地址有误\n";
+    //     }
+    //     if(!checkMobile(mobile)){
+    //         error += "手机号码填写有误\n";
+    //     }
+    //     if(error){
+    //         layer.alert(error, {icon: 2});  //alert(error);
+    //         return false;
+    //     }
+    //     return true;
+    // }
+</script>
+
+</body>
+</html>

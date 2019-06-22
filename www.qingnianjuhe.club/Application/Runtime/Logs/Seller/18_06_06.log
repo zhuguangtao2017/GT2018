@@ -1,0 +1,16 @@
+[ 2018-06-06T12:10:48+08:00 ] 61.148.243.122 /index.php/Seller/Goods/del_goods_images?filename=%2FPublic%2Fupload%2Fgoods%2F2018%2F05-28%2F5b0addc4249c0.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000107s ]
+
+[ 2018-06-06T12:13:28+08:00 ] 61.148.243.122 /index.php/Seller/Goods/del_goods_images?filename=%2FPublic%2Fupload%2Fgoods%2F2018%2F05-28%2F5b0ade280f50d.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000110s ]
+

@@ -1,0 +1,242 @@
+[ 2018-08-15T12:04:01+08:00 ] 61.148.244.21 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000117s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000230s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000260s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002981s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000234s ]
+
+[ 2018-08-15T12:04:02+08:00 ] 61.148.244.21 /index.php/Admin/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000122s ]
+NOTIC: [8] Undefined index: login /home/www/htdocs/Application/Admin/Common/function.php 第 70 行.
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000298s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000406s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003307s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000105s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000086s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000107s ]
+
+[ 2018-08-15T12:04:02+08:00 ] 61.148.244.21 /index.php/Admin/Admin/vertify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: vertify /home/www/htdocs/Application/Admin/Common/function.php 第 70 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000107s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000150s ]
+
+[ 2018-08-15T12:04:10+08:00 ] 61.148.244.21 /index.php?m=Admin&c=Admin&a=vertify&r=70
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: vertify /home/www/htdocs/Application/Admin/Common/function.php 第 70 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000095s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000138s ]
+
+[ 2018-08-15T12:04:12+08:00 ] 61.148.244.21 /index.php?m=Admin&c=Admin&a=login&t=0.30883944693331733
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index: login /home/www/htdocs/Application/Admin/Common/function.php 第 70 行.
+
+[ 2018-08-15T12:04:12+08:00 ] 61.148.244.21 /index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000117s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000237s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000275s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007428s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000088s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000110s ]
+
+[ 2018-08-15T12:04:13+08:00 ] 61.148.244.21 /index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000121s ]
+NOTIC: [8] Undefined index: welcome /home/www/htdocs/Application/Admin/Common/function.php 第 70 行.
+NOTIC: [8] Undefined index: version /home/www/htdocs/Application/Admin/Controller/IndexController.class.php 第 57 行.
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000272s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000321s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004589s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004620s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000086s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000108s ]
+
+[ 2018-08-15T12:04:13+08:00 ] 61.148.244.21 /index.php/Admin/System/login_task
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000112s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000252s ]
+NOTIC: [8] Undefined index: login_task /home/www/htdocs/Application/Admin/Common/function.php 第 70 行.
+NOTIC: [2] Invalid argument supplied for foreach() /home/www/htdocs/Application/Admin/Controller/SystemController.class.php 第 248 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000101s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000135s ]
+
+[ 2018-08-15T12:04:19+08:00 ] 61.148.244.21 /index.php/Admin/Goods/categoryList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000126s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000233s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000270s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 126 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 131 行.
+NOTIC: [8] Use of undefined constant is_show - assumed 'is_show' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 134 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 126 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 131 行.
+NOTIC: [8] Use of undefined constant is_show - assumed 'is_show' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 134 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 126 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 131 行.
+NOTIC: [8] Use of undefined constant is_show - assumed 'is_show' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 134 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 126 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 131 行.
+NOTIC: [8] Use of undefined constant is_show - assumed 'is_show' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 134 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 126 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 131 行.
+NOTIC: [8] Use of undefined constant is_show - assumed 'is_show' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 134 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 126 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 131 行.
+NOTIC: [8] Use of undefined constant is_show - assumed 'is_show' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 134 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 126 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 131 行.
+NOTIC: [8] Use of undefined constant is_show - assumed 'is_show' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 134 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 126 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 131 行.
+NOTIC: [8] Use of undefined constant is_show - assumed 'is_show' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 134 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 126 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 131 行.
+NOTIC: [8] Use of undefined constant is_show - assumed 'is_show' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 134 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 126 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 131 行.
+NOTIC: [8] Use of undefined constant is_show - assumed 'is_show' /home/www/htdocs/Application/Runtime/Cache/Admin/83974538ecda025b39358b0db8629987.php 第 134 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007133s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007161s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000258s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000089s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000113s ]
+
+[ 2018-08-15T12:57:14+08:00 ] 101.199.112.53 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000123s ]
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000239s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000267s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000053s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002242s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002270s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000095s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000262s ]
+
+[ 2018-08-15T12:57:15+08:00 ] 101.199.112.53 /index.php/Admin/Admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000072s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: login /home/www/htdocs/Application/Admin/Common/function.php 第 70 行.
+INFO: [ view_begin ] --START--
+INFO: Run Home\Behaviors\testBehavior [ RunTime:0.000281s ]
+INFO: [ view_begin ] --END-- [ RunTime:0.000344s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002656s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002686s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000157s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000102s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000125s ]
+
